@@ -1,0 +1,49 @@
+Windows PowerShell
+Copyright (C) 2015 Microsoft Corporation. All rights reserved.
+
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets> ls
+
+
+    Directory: E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        14-Dec-21  10:05 PM             16 tempCodeRunnerFile.java
+-a----        14-Dec-21  10:07 PM            377 _01_AppletsIntro.class
+-a----        14-Dec-21  10:27 PM            607 _01_AppletsIntro.html
+-a----        14-Dec-21  10:05 PM            221 _01_AppletsIntro.java
+
+
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets> javacold _01_AppletsIntro.java
+Note: _01_AppletsIntro.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets> ls
+
+
+    Directory: E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        14-Dec-21  10:05 PM             16 tempCodeRunnerFile.java
+-a----        14-Dec-21  10:27 PM            607 _01_AppletsIntro.html
+-a----        14-Dec-21  10:05 PM            221 _01_AppletsIntro.java
+
+
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets> javacold _01_AppletsIntro.java
+Note: _01_AppletsIntro.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets> javacold -Xlint _01_AppletsIntro.java
+_01_AppletsIntro.java:7: warning: [deprecation] Applet in java.applet has been deprecated
+public class _01_AppletsIntro extends Applet {
+                                      ^
+_01_AppletsIntro.java:7: warning: [serial] serializable class _01_AppletsIntro has no definition of serialVersionUID
+public class _01_AppletsIntro extends Applet {
+       ^
+2 warnings
+PS E:\03 Semester\Java\Haldwani-SujataMa'am\_06_Applets>
+
+
+
+

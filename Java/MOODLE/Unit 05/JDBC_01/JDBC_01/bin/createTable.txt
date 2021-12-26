@@ -1,0 +1,54 @@
+mysql> show databases ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.02 sec)
+
+mysql> use test ;
+Database changed
+
+mysql> create table people
+    -> (FirstName varchar(15),
+    -> LastName varchar(15),
+    -> Age int) ;
+Query OK, 0 rows affected (1.78 sec)
+
+mysql> desc people
+    -> ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| FirstName | varchar(15) | YES  |     | NULL    |       |
+| LastName  | varchar(15) | YES  |     | NULL    |       |
+| Age       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.08 sec)
+
+
+mysql> select * from people
+    -> ;
+Empty set (0.01 sec)
+
+
+
+mysql> show tables ;
++----------------+
+| Tables_in_test |
++----------------+
+| employee       |
+| people         |
++----------------+
+2 rows in set (0.02 sec)
+
+
+
+**********************************************************************************************
+

@@ -1,0 +1,6 @@
+Practice filter=lfs diff=lfs merge=lfs -text
+installs filter=lfs diff=lfs merge=lfs -text
+syllabus.pdf filter=lfs diff=lfs merge=lfs -text
+Assignments filter=lfs diff=lfs merge=lfs -text
+Haldwani-SujataMa'am filter=lfs diff=lfs merge=lfs -text
+MOODLE filter=lfs diff=lfs merge=lfs -text
