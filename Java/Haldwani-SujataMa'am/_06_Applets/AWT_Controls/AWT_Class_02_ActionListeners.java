@@ -27,7 +27,7 @@ public class AWT_Class_02_ActionListeners extends WindowAdapter implements Actio
         f = new Frame();
         f.setTitle("Sum of two numbers");
         f.setVisible(true);
-        f.setBounds(50, 50, 1100, 100);
+        f.setBounds(50, 50, 11 00, 100);
         f.setBackground(Color.magenta);
         Label l1 = new Label("First Number");
         f.add(l1);
