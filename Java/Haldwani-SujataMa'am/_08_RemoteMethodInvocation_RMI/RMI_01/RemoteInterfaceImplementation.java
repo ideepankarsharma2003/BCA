@@ -7,9 +7,8 @@ public class RemoteInterfaceImplementation extends UnicastRemoteObject implement
         super();
     }
 
-    public String add(int a, int b) throws Exception{
-        System.out.println("The sum of "+ a+ " and "+ b+ " is: "+ (a+b));
-        return "Addition Performed Successfully :)";
+    public void ShowName(String Name) throws Exception{
+        System.out.println("Hello, "+ Name);
     }
 
 }

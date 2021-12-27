@@ -5,5 +5,5 @@ import java.rmi.Remote;
  */
 public interface RemoteInterface extends Remote{
 
-    public String add (int a, int b) throws Exception;
+    public void ShowName (String Name) throws Exception;
 }
