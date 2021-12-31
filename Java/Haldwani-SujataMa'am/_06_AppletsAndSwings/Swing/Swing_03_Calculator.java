@@ -1,3 +1,5 @@
+// package Swing;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -68,6 +70,6 @@ public class Swing_03_Calculator extends JFrame implements ActionListener{
 
 
     public static void main(String[] args) {
-        Swing_03_Calculator obj= new Swing_03_Calculator();
+        new Swing_03_Calculator();
     }
 }

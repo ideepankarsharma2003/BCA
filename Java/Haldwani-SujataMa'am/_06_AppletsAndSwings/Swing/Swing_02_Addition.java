@@ -1,3 +1,5 @@
+// package Swing;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -64,7 +66,7 @@ public class Swing_02_Addition extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        Swing_02_Addition obj= new Swing_02_Addition();    
+        new Swing_02_Addition();    
     }
     
 }

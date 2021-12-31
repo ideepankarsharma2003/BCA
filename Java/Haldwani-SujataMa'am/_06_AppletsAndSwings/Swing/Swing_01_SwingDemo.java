@@ -1,3 +1,4 @@
+// package Swing;
 import java.awt.*;
 import java.awt.FlowLayout;
 import javax.swing.JFrame;
@@ -18,7 +19,8 @@ public class Swing_01_SwingDemo extends JFrame{ // CardLayout -----> by default 
     }
 
     public static void main(String[] args) {
-        Swing_01_SwingDemo obj= new Swing_01_SwingDemo();
+        // Swing_01_SwingDemo obj= new Swing_01_SwingDemo();
+        new Swing_01_SwingDemo();
         // obj.show(); // ----> deprecated
     }
 }
