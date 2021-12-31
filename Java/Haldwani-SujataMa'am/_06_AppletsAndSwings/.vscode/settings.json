@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Swing",
         "GraphicsProgramming",
-        "Swing"
+        "AWT_Controls/LayoutManagers"
     ]
 }
