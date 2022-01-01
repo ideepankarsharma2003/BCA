@@ -1,0 +1,25 @@
+mysql> delimiter /
+mysql> create procedure ageBelow(IN id int)
+    -> BEGIN
+    -> Select * From people Where Age < id;
+    -> END ;
+    -> /
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> call ageBelow(30)
+    -> /
++-----------+----------+------+
+| FirstName | LastName | Age  |
++-----------+----------+------+
+| Deepankar | Sharma   |   18 |
+| Oliver    | Queen    |   18 |
+| Tushar    | Jeena    |   25 |
+| Karan     | Jeena    |   19 |
+| Tushar    | Jeena    |   25 |
+| Karan     | Jeena    |   19 |
++-----------+----------+------+
+6 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>

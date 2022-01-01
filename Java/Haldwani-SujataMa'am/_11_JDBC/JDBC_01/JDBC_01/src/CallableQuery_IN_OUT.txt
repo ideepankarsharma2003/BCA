@@ -1,0 +1,6 @@
+mysql> create procedure nn(IN name varchar(15), OUT cast varchar(15))
+    -> BEGIN
+    -> Select LastName INTO cast From people Where FirstName=name;
+    -> End ;
+    -> /
+Query OK, 0 rows affected (0.15 sec)
