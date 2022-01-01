@@ -150,7 +150,7 @@ public class CollectionFramework_01_Collection {
          * Map-----> key values pairs
          */
 
-        // HashMap
+        // HashMap ----> Not Thread Safe: Non-Synchronized
         Map m1= new HashMap<>();
         m1.put("Sad", "Nibba");
         m1.put("key", "value");
@@ -162,7 +162,7 @@ public class CollectionFramework_01_Collection {
         // System.out.println(key+ " : "+ m1.get(key));
         // }
 
-        // HashTable
+        // HashTable ----> Thread Safe: Synchronized
         Map m2 = new Hashtable();
         m2.put("Sad", "Nibba");
         m2.put("key", "value");
