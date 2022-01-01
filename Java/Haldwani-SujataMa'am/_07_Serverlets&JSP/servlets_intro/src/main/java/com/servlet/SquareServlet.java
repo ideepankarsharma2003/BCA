@@ -13,9 +13,11 @@ public class SquareServlet extends HttpServlet{
 
         int sum = (int)req.getAttribute("sum"); // attribute from AddServlet
 
-        res.getWriter().println("num1 is: "+ num1+ " and it's Square is: "+ (num1*num1));
-        res.getWriter().println("num2 is: "+ num2+ " and it's Square is: "+ (num2*num2));
-        res.getWriter().println("sum is: "+ sum+ " and it's Square is: "+ (sum*sum));
+        res.getWriter().println("<html><body bgcolor=cyan><h1>");
+        res.getWriter().println("<p>num1 is: "+ num1+ " and it's Square is: "+ (num1*num1)+ "<br></p>");
+        res.getWriter().println("<p>num2 is: "+ num2+ " and it's Square is: "+ (num2*num2)+ "<br></p>");
+        res.getWriter().println("<p>sum is: "+ sum+ " and it's Square is: "+ (sum*sum)+ "<br></p>");
+        res.getWriter().println("</html></body></h1>");
     }
 
     @Override
