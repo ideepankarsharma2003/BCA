@@ -1,0 +1,32 @@
+mysql> select * from people ;
++-----------+-------------+------+
+| FirstName | LastName    | Age  |
++-----------+-------------+------+
+| Deepankar | Sharma      |   18 |
+| Oliver    | Queen       |   18 |
+| Lucifer   | Morningstar |   34 |
+| Dean      | Winchester  |   42 |
+| Chota     | Cheems      |   14 |
++-----------+-------------+------+
+5 rows in set (0.00 sec)
+
+**********************************************************************************************************************
+
+mysql> select * from people ;
++-----------+-------------+------+
+| FirstName | LastName    | Age  |
++-----------+-------------+------+
+| Deepankar | Sharma      |   18 |
+| Oliver    | Queen       |   18 |
+| Lucifer   | Morningstar |   34 |
+| Dean      | Winchester  |   42 |
+| Munna     | Tripathi    |   30 |
+| Tushar    | Jeena       |   25 |
+| Munna     | Bhaiya      |   30 |
+| Karan     | Jeena       |   19 |
+| Munna     | Tripathi    |   30 |
+| Tushar    | Jeena       |   25 |
+| Munna     | Bhaiya      |   30 |
+| Karan     | Jeena       |   19 |
++-----------+-------------+------+
+12 rows in set (0.00 sec)
