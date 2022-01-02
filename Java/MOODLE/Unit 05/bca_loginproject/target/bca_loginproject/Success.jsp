@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=./S1 method="get, put">
-        <input type="text" name="t1" placeholder="Enter your Name: ">
-        <input type="submit" name="b" value="Click To Submit">
-    </form>
+    <%
+        String user= request.getParameter("t1");
+        out.println("Welcome Dear User "+ user+ " !!!!");
+    %>    
 </body>
 </html>
+

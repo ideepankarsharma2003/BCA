@@ -1,0 +1,60 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 68
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.03 sec)
+
+mysql> create database bca ;
+Query OK, 1 row affected (0.22 sec)
+
+mysql> use bca
+Database changed
+
+mysql> create table user (name varchar(30), password varchar(20), age int, phone varchar(10));
+Query OK, 0 rows affected (1.46 sec)
+
+mysql> desc user ;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(30) | YES  |     | NULL    |       |
+| password | varchar(20) | YES  |     | NULL    |       |
+| age      | int         | YES  |     | NULL    |       |
+| phone    | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.04 sec)
+
+mysql> Insert Into user values('Deepankar', 'root', 18, '9639102301') ;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from user ;
++-----------+----------+------+------------+
+| name      | password | age  | phone      |
++-----------+----------+------+------------+
+| Deepankar | root     |   18 | 9639102301 |
++-----------+----------+------+------------+
+1 row in set (0.00 sec)
+
+mysql>
