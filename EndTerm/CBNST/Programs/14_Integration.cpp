@@ -1,5 +1,7 @@
 #include <iostream>
-#define f(x) 1 / (1 + (x * x))
+#include <math.h>
+// #define f(x) 1 / (1 + (x * x))
+#define f(x) pow(sin(x), 0.5)
 
 float ll; // lower limit
 float ul; // upper limit

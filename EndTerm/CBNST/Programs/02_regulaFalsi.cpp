@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#define f(x) x*x -2
+#define f(x) cos(x)- 3*x+ 1
 
 int main(){
     int iter=1;
