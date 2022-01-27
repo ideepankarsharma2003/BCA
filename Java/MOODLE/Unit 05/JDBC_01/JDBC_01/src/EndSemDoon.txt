@@ -1,0 +1,114 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases ;
++--------------------+
+| Database           |
++--------------------+
+| bca                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+8 rows in set (0.52 sec)
+
+mysql> use test ;
+Database changed
+mysql> show databases ;
++--------------------+
+| Database           |
++--------------------+
+| bca                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> create database FutureAutoDehradun ;
+Query OK, 1 row affected (0.27 sec)
+
+mysql> show databases ;
++--------------------+
+| Database           |
++--------------------+
+| bca                |
+| futureautodehradun |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> use FutureAutoDehradun;
+Database changed
+mysql> create table Automobile ;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table Automobile
+    -> id int ,
+    -> vechicle_name varchar,
+    -> price double ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id int ,
+vechicle_name varchar,
+price double' at line 2
+mysql> create table Automobile
+    ->     -> id int ,
+    ->     -> vechicle_name varchar,
+    ->
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> id int ,
+    -> vechicle_name varchar,' at line 2
+mysql> create table automobile
+    -> id int,
+    -> vechicle_name varchar[10],
+    -> price double ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id int,
+vechicle_name varchar[10],
+price double' at line 2
+mysql> create table automobile
+    -> (int id,
+    -> vechicle_name varchar(15),
+    -> price double);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int id,
+vechicle_name varchar(15),
+price double)' at line 2
+mysql> create table automobile
+    -> (id int,
+    -> vechicle_name varchar(15),
+    -> price double) ;
+Query OK, 0 rows affected (2.20 sec)
+
+mysql> desc automobile ;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| id            | int         | YES  |     | NULL    |       |
+| vechicle_name | varchar(15) | YES  |     | NULL    |       |
+| price         | double      | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+3 rows in set (0.12 sec)
+
+mysql>
