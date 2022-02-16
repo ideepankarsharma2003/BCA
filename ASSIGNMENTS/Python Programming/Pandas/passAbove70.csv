@@ -1,0 +1,6 @@
+,PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+96,97,0,1,"Goldschmidt, Mr. George B",male,71.0,0,0,PC 17754,34.6542,A5,C
+116,117,0,3,"Connors, Mr. Patrick",male,70.5,0,0,370369,7.75,,Q
+493,494,0,1,"Artagaveytia, Mr. Ramon",male,71.0,0,0,PC 17609,49.5042,,C
+630,631,1,1,"Barkworth, Mr. Algernon Henry Wilson",male,80.0,0,0,27042,30.0,A23,S
+851,852,0,3,"Svensson, Mr. Johan",male,74.0,0,0,347060,7.775,,S

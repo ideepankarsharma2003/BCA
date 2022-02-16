@@ -1,0 +1,8 @@
+t1 = ('deepankar', 56.45, 'oliver', 'roy', 'mia', 1, 2 ,'barry', 'felicity', False)
+t1 = list(t1)
+t1.remove(56.45)
+t1.append('A')
+t1.insert(4,'g')
+t1.insert(7,'O')
+t1 = tuple(t1)
+print(t1)

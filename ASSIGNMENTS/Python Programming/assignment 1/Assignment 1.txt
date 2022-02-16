@@ -1,0 +1,5 @@
+1. Write 10 points to represent the differences between the C Programming and Python Programming.
+2. Explain any one field of computer science in detail with some examples where python is used.
+3. Is python is used for research purpose also. Support your answer in detail with some examples.
+4. Find out difference between a compiler and an interpreter.
+5. Investigate the difference between a header file in C and a module in Python.
