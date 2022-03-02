@@ -1,0 +1,168 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bca                |
+| deepankar          |
+| futureautodehradun |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+10 rows in set (0.04 sec)
+
+mysql> use bca;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| user          |
++---------------+
+1 row in set (0.14 sec)
+
+mysql> create table students(rollno INT, firstname varchar(20), lastname varchar(20));
+Query OK, 0 rows affected (2.07 sec)
+
+mysql> desc students;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | YES  |     | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.09 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql>
+mysql>
+mysql>
+mysql> ALTER TABLE students ADD (age INT, semester INT);
+Query OK, 0 rows affected (0.81 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc students;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | YES  |     | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| semester  | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> ALTER TABLE students RENAME COLUMN semester TO sem;
+Query OK, 0 rows affected (0.37 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc students;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | YES  |     | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| sem       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.07 sec)
+
+mysql> ALTER TABLE students RENAME TO bca_students;
+Query OK, 0 rows affected (0.73 sec)
+
+mysql> desc bca_students;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | YES  |     | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| sem       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE bca_students DROP COLUMN age, DROP COLUMN sem;
+Query OK, 0 rows affected (2.47 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc bca_students ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | YES  |     | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.04 sec)
+
+
+
+
+
+
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> DROP TABLE bca_students;
+Query OK, 0 rows affected (0.98 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| user          |
++---------------+
+1 row in set (0.00 sec)
+
+mysql>
