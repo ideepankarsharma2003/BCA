@@ -97,3 +97,122 @@ mysql> SELECT firstname FROM students;
 6 rows in set (0.00 sec)
 
 mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| students      |
+| user          |
++---------------+
+2 rows in set (0.05 sec)
+
+mysql> select * from students;
++--------+-----------+------------+
+| rollno | firstname | lastname   |
++--------+-----------+------------+
+|      1 | Aman      | Chandra    |
+|      2 | Bob       | Marley     |
+|      3 | Dean      | Winchester |
+|      4 | Sam       | Winchester |
+|      5 | Tyler     | Posey      |
+|      6 | Tyler     | Heoclyn    |
++--------+-----------+------------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> UPDATE students
+    -> SET firstname= 'Jensen', lastname= 'Ackles'
+    -> WHERE rollno= 3;
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students;
++--------+-----------+------------+
+| rollno | firstname | lastname   |
++--------+-----------+------------+
+|      1 | Aman      | Chandra    |
+|      2 | Bob       | Marley     |
+|      3 | Jensen    | Ackles     |
+|      4 | Sam       | Winchester |
+|      5 | Tyler     | Posey      |
+|      6 | Tyler     | Heoclyn    |
++--------+-----------+------------+
+6 rows in set (0.01 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> DELETE FROM students
+    -> WHERE firstname= 'Tyler' AND lastname= 'Heoclyn';
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from students;
++--------+-----------+------------+
+| rollno | firstname | lastname   |
++--------+-----------+------------+
+|      1 | Aman      | Chandra    |
+|      2 | Bob       | Marley     |
+|      3 | Jensen    | Ackles     |
+|      4 | Sam       | Winchester |
+|      5 | Tyler     | Posey      |
++--------+-----------+------------+
+5 rows in set (0.01 sec)
+
+mysql>
+
+
+
