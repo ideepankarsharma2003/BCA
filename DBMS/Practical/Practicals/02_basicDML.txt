@@ -1,0 +1,99 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use bca;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| user          |
++---------------+
+1 row in set (0.03 sec)
+
+mysql> create table students(rollno INT PRIMARY KEY, firstname varchar(20), lastname varchar(20));
+Query OK, 0 rows affected (1.58 sec)
+
+mysql> desc students;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| rollno    | int         | NO   | PRI | NULL    |       |
+| firstname | varchar(20) | YES  |     | NULL    |       |
+| lastname  | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> INSERT INTO students VALUES(1, "Aman", "Chandra");
+Query OK, 1 row affected (0.31 sec)
+
+mysql> INSERT INTO students VALUES(2, "Bob", "Marley");
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO students VALUES(3, "Dean", "Winchester");
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO students VALUES(4, "Sam", "Winchester");
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO students VALUES(5, "Tyler", "Posey");
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO students VALUES(6, "Tyler", "Heoclyn");
+Query OK, 1 row affected (0.15 sec)
+
+mysql> SELECT * FROM students;
++--------+-----------+------------+
+| rollno | firstname | lastname   |
++--------+-----------+------------+
+|      1 | Aman      | Chandra    |
+|      2 | Bob       | Marley     |
+|      3 | Dean      | Winchester |
+|      4 | Sam       | Winchester |
+|      5 | Tyler     | Posey      |
+|      6 | Tyler     | Heoclyn    |
++--------+-----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM students where firstname= 'Tyler';
++--------+-----------+----------+
+| rollno | firstname | lastname |
++--------+-----------+----------+
+|      5 | Tyler     | Posey    |
+|      6 | Tyler     | Heoclyn  |
++--------+-----------+----------+
+2 rows in set (0.04 sec)
+
+mysql> SELECT * FROM students where lastname= 'Winchester';
++--------+-----------+------------+
+| rollno | firstname | lastname   |
++--------+-----------+------------+
+|      3 | Dean      | Winchester |
+|      4 | Sam       | Winchester |
++--------+-----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT firstname FROM students;
++-----------+
+| firstname |
++-----------+
+| Aman      |
+| Bob       |
+| Dean      |
+| Sam       |
+| Tyler     |
+| Tyler     |
++-----------+
+6 rows in set (0.00 sec)
+
+mysql>
