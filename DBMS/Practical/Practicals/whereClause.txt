@@ -1,0 +1,127 @@
+mysql> use bca;
+Database changed
+mysql> show tables ;
++---------------+
+| Tables_in_bca |
++---------------+
+| students      |
+| user          |
++---------------+
+2 rows in set (0.15 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| students      |
+| user          |
++---------------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE shopcart(shop_id INT PRIMARY KEY, shop_name VARCHAR(20), item_name VARCHAR(20), item_quantity INT, price INT);
+Query OK, 0 rows affected (0.94 sec)
+
+mysql> DESC shopcart;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| shop_id       | int         | NO   | PRI | NULL    |       |
+| shop_name     | varchar(20) | YES  |     | NULL    |       |
+| item_name     | varchar(20) | YES  |     | NULL    |       |
+| item_quantity | int         | YES  |     | NULL    |       |
+| price         | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.13 sec)
+
+mysql>
+mysql> INSERT INTO shopcart VALUES(1, 'Joshi Chaiwala', 'Momo', 5, 20);
+Query OK, 1 row affected (0.24 sec)
+
+mysql> INSERT INTO shopcart VALUES(2, 'Joshi Chaiwala', 'Milk chai', 1, 20);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> INSERT INTO shopcart VALUES(3, 'Sooraj da Dhaba', 'samosa', 5, 35);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO shopcart VALUES(4, 'Sooraj da Dhaba', 'Aloo-Chutney', 1, 50);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO shopcart VALUES(5, 'Sooraj da Dhaba', 'Jalebi', 5, 50);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> INSERT INTO shopcart VALUES(6, 'Boogilal', 'kurkure', 1, 5);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO shopcart VALUES(7, 'Boogilal', 'cream-roll', 1, 10);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO shopcart VALUES(8, 'Joshi Chaiwala', 'pani poori', 25, 15);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO shopcart VALUES(9, 'Khan Shaab', 'Sugarcane Juice', 1, 15);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO shopcart VALUES(10, 'Siddhu Paaji', 'Lassi', 1, 25);
+Query OK, 1 row affected (0.07 sec)
+
+mysql>
+mysql> SELECT * FROM shopcart;
++---------+-----------------+-----------------+---------------+-------+
+| shop_id | shop_name       | item_name       | item_quantity | price |
++---------+-----------------+-----------------+---------------+-------+
+|       1 | Joshi Chaiwala  | Momo            |             5 |    20 |
+|       2 | Joshi Chaiwala  | Milk chai       |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa          |             5 |    35 |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |             1 |    50 |
+|       5 | Sooraj da Dhaba | Jalebi          |             5 |    50 |
+|       6 | Boogilal        | kurkure         |             1 |     5 |
+|       7 | Boogilal        | cream-roll      |             1 |    10 |
+|       8 | Joshi Chaiwala  | pani poori      |            25 |    15 |
+|       9 | Khan Shaab      | Sugarcane Juice |             1 |    15 |
+|      10 | Siddhu Paaji    | Lassi           |             1 |    25 |
++---------+-----------------+-----------------+---------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM shopcart WHERE item_quantity=1 AND price<20;
++---------+------------+-----------------+---------------+-------+
+| shop_id | shop_name  | item_name       | item_quantity | price |
++---------+------------+-----------------+---------------+-------+
+|       6 | Boogilal   | kurkure         |             1 |     5 |
+|       7 | Boogilal   | cream-roll      |             1 |    10 |
+|       9 | Khan Shaab | Sugarcane Juice |             1 |    15 |
++---------+------------+-----------------+---------------+-------+
+3 rows in set (0.02 sec)
+
+mysql> SELECT * FROM shopcart WHERE item_quantity=1 OR price>20;
++---------+-----------------+-----------------+---------------+-------+
+| shop_id | shop_name       | item_name       | item_quantity | price |
++---------+-----------------+-----------------+---------------+-------+
+|       2 | Joshi Chaiwala  | Milk chai       |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa          |             5 |    35 |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |             1 |    50 |
+|       5 | Sooraj da Dhaba | Jalebi          |             5 |    50 |
+|       6 | Boogilal        | kurkure         |             1 |     5 |
+|       7 | Boogilal        | cream-roll      |             1 |    10 |
+|       9 | Khan Shaab      | Sugarcane Juice |             1 |    15 |
+|      10 | Siddhu Paaji    | Lassi           |             1 |    25 |
++---------+-----------------+-----------------+---------------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM shopcart WHERE item_name LIKE 'M%' OR shop_name LIKE '%a' OR shop_name LIKE 'S%i';
++---------+-----------------+--------------+---------------+-------+
+| shop_id | shop_name       | item_name    | item_quantity | price |
++---------+-----------------+--------------+---------------+-------+
+|       1 | Joshi Chaiwala  | Momo         |             5 |    20 |
+|       2 | Joshi Chaiwala  | Milk chai    |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa       |             5 |    35 |
+|       4 | Sooraj da Dhaba | Aloo-Chutney |             1 |    50 |
+|       5 | Sooraj da Dhaba | Jalebi       |             5 |    50 |
+|       8 | Joshi Chaiwala  | pani poori   |            25 |    15 |
+|      10 | Siddhu Paaji    | Lassi        |             1 |    25 |
++---------+-----------------+--------------+---------------+-------+
+7 rows in set (0.00 sec)
+
+mysql>
+
+
+
