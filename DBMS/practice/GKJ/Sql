@@ -1,0 +1,231 @@
+SQL> insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID);
+Enter value for deptname: bca
+Enter value for deptno: 11
+Enter value for deptlocation: SecondFloor
+Enter value for deptid: 22
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('bca', 11, 'SecondFloor', 22)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: bfd
+Enter value for deptno: 12
+Enter value for deptlocation: ThirdFloor
+Enter value for deptid: 33
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('bfd', 12, 'ThirdFloor', 33)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: bba
+Enter value for deptno: 13
+Enter value for deptlocation: FourthFloor
+Enter value for deptid: 44
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('bba', 13, 'FourthFloor', 44)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: bsc
+Enter value for deptno: 14
+Enter value for deptlocation: GroundFloor
+Enter value for deptid: 55
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('bsc', 14, 'GroundFloor', 55)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: btech
+Enter value for deptno: 15
+Enter value for deptlocation: SixthFloor
+Enter value for deptid: 66
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('btech', 15, 'SixthFloor', 66)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: cs
+Enter value for deptno: 16
+Enter value for deptlocation: FifthFloor
+Enter value for deptid: 77
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('cs', 16, 'FifthFloor', 77)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: mechanical
+Enter value for deptno: 17
+Enter value for deptlocation: FirstFloor
+Enter value for deptid: 88
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('mechanical', 17, 'FirstFloor', 88)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: civil
+Enter value for deptno: 18
+Enter value for deptlocation: EigthFloor
+Enter value for deptid: 88
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('civil', 18, 'EigthFloor', 88)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: diploma
+Enter value for deptno: 19
+Enter value for deptlocation: NinthFloor
+Enter value for deptid: 11
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('diploma', 19, 'NinthFloor', 11)
+
+1 row created.
+
+SQL> /
+Enter value for deptname: mba
+Enter value for deptno: 20
+Enter value for deptlocation: SeventhFloor
+Enter value for deptid: 72
+old   1: insert into department(deptName, deptNo, deptLocation, deptID) values('&deptName', &deptNo, '&deptLocation', &deptID)
+new   1: insert into department(deptName, deptNo, deptLocation, deptID) values('mba', 20, 'SeventhFloor', 72)
+
+1 row created.
+
+SQL> insert into department(empID, empName, deptName, empContact) values('&empID','&empName', &deptNo, &empContact);
+Enter value for empid: 1
+Enter value for empname: Amit
+Enter value for deptno: 11
+Enter value for empcontact: 12345
+old   1: insert into department(empID, empName, deptName, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into department(empID, empName, deptName, empContact) values('1','Amit', 11, 12345)
+insert into department(empID, empName, deptName, empContact) values('1','Amit', 11, 12345)
+                                                 *
+ERROR at line 1:
+ORA-00904: "EMPCONTACT": invalid identifier
+
+
+SQL> insert into department(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact);
+Enter value for empid: 1
+Enter value for empname: Amit
+Enter value for deptno: 11
+Enter value for empcontact: 12345
+old   1: insert into department(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into department(empID, empName, deptNo, empContact) values('1','Amit', 11, 12345)
+insert into department(empID, empName, deptNo, empContact) values('1','Amit', 11, 12345)
+                                               *
+ERROR at line 1:
+ORA-00904: "EMPCONTACT": invalid identifier
+
+
+SQL> insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact);
+Enter value for empid: 1
+Enter value for empname: Amit
+Enter value for deptno: 11
+Enter value for empcontact: 12345
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('1','Amit', 11, 12345)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 2
+Enter value for empname: Rohan
+Enter value for deptno: 12
+Enter value for empcontact: 67892
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('2','Rohan', 12, 67892)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 3
+Enter value for empname: Sham
+Enter value for deptno: 13
+Enter value for empcontact: 23499
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('3','Sham', 13, 23499)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 4
+Enter value for empname: Riya
+Enter value for deptno: 14
+Enter value for empcontact: 79282
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('4','Riya', 14, 79282)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 5
+Enter value for empname: Harman
+Enter value for deptno: 15
+Enter value for empcontact: 57123
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('5','Harman', 15, 57123)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 6
+Enter value for empname: Parth
+Enter value for deptno: 16
+Enter value for empcontact: 45721
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('6','Parth', 16, 45721)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 7
+Enter value for empname: Naveen
+Enter value for deptno: 17
+Enter value for empcontact: 59231
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('7','Naveen', 17, 59231)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 8
+Enter value for empname: Adarsh
+Enter value for deptno: 18
+Enter value for empcontact: 57781
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('8','Adarsh', 18, 57781)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 9
+Enter value for empname: Teena
+Enter value for deptno: 19
+Enter value for empcontact: 23491
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('9','Teena', 19, 23491)
+
+1 row created.
+
+SQL> /
+Enter value for empid: 10
+Enter value for empname: Ram
+Enter value for deptno: 20
+Enter value for empcontact: 78932
+old   1: insert into employee(empID, empName, deptNo, empContact) values('&empID','&empName', &deptNo, &empContact)
+new   1: insert into employee(empID, empName, deptNo, empContact) values('10','Ram', 20, 78932)
+
+1 row created.
+
+SQL> Display employee_id, employee_name, employee_contact_no, department_namDisplay employee_id, e, department_number and  department_location from both the table by performing join operation.
+SP2-0734: unknown command beginning "Display em..." - rest of line ignored.
+SQL> Display employee_id, employee_name, employee_contact_no, department_namDisplay employee_id, e, department_number and  department_location from both the table by performing join operation.
+SP2-0734: unknown command beginning "Display em..." - rest of line ignored.
+SQL>
