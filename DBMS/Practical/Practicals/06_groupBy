@@ -1,0 +1,73 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bca                |
+| deepankar          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+9 rows in set (0.03 sec)
+
+mysql> use world;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+3 rows in set (0.02 sec)
+
+mysql> desc country;
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+| Field          | Type                                                                                  | Null | Key | Default | Extra |
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+| Code           | char(3)                                                                               | NO   | PRI |         |       |
+| Name           | char(52)                                                                              | NO   |     |         |       |
+| Continent      | enum('Asia','Europe','North America','Africa','Oceania','Antarctica','South America') | NO   |     | Asia    |       |
+| Region         | char(26)                                                                              | NO   |     |         |       |
+| SurfaceArea    | float(10,2)                                                                           | NO   |     | 0.00    |       |
+| IndepYear      | smallint                                                                              | YES  |     | NULL    |       |
+| Population     | int                                                                                   | NO   |     | 0       |       |
+| LifeExpectancy | float(3,1)                                                                            | YES  |     | NULL    |       |
+| GNP            | float(10,2)                                                                           | YES  |     | NULL    |       |
+| GNPOld         | float(10,2)                                                                           | YES  |     | NULL    |       |
+| LocalName      | char(45)                                                                              | NO   |     |         |       |
+| GovernmentForm | char(45)                                                                              | NO   |     |         |       |
+| HeadOfState    | char(60)                                                                              | YES  |     | NULL    |       |
+| Capital        | int                                                                                   | YES  |     | NULL    |       |
+| Code2          | char(2)                                                                               | NO   |     |         |       |
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+15 rows in set (0.03 sec)
+
+mysql> select count(name) as No_of_Countries , continent from country group by continent ;
++-----------------+---------------+
+| No_of_Countries | continent     |
++-----------------+---------------+
+|              37 | North America |
+|              51 | Asia          |
+|              58 | Africa        |
+|              46 | Europe        |
+|              14 | South America |
+|              28 | Oceania       |
+|               5 | Antarctica    |
++-----------------+---------------+
+7 rows in set (0.20 sec)
+
+mysql> select count(name) as No_of_Countries , continent from country group by continent having continent like 'A%' ;
++-----------------+------------+
+| No_of_Countries | continent  |
++-----------------+------------+
+|              51 | Asia       |
+|              58 | Africa     |
+|               5 | Antarctica |
++-----------------+------------+
+3 rows in set (0.06 sec)

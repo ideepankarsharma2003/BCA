@@ -1,0 +1,51 @@
+mysql> create table fg(id int PRIMARY KEY);
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> desc fg;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.06 sec)
+
+mysql> CREATE TABLE ConstraintTable(
+    -> nn INT NOT NULL,
+    -> unq DATE UNIQUE,
+    -> pmkey int PRIMARY KEY,
+    -> fgkey int,
+    -> chk int CHECK (chk >100),
+    -> dft varchar(20) DEFAULT 'default',
+    -> FOREIGN KEY(fgkey) REFERENCES fg(Id)
+    -> );
+Query OK, 0 rows affected (1.80 sec)
+
+mysql> desc ConstraintTable;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| nn    | int         | NO   |     | NULL    |       |
+| unq   | date        | YES  | UNI | NULL    |       |
+| pmkey | int         | NO   | PRI | NULL    |       |
+| fgkey | int         | YES  | MUL | NULL    |       |
+| chk   | int         | YES  |     | NULL    |       |
+| dft   | varchar(20) | YES  |     | default |       |
++-------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> Create Index idx on ConstraintTable(unq ASC);
+Query OK, 0 rows affected (0.41 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> Show Index from ConstraintTable;
++-----------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table           | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++-----------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| constrainttable |          0 | PRIMARY  |            1 | pmkey       | A         |           0 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| constrainttable |          0 | unq      |            1 | unq         | A         |           0 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| constrainttable |          1 | fgkey    |            1 | fgkey       | A         |           0 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| constrainttable |          1 | idx      |            1 | unq         | A         |           0 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++-----------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+4 rows in set (0.29 sec)
+
+mysql>

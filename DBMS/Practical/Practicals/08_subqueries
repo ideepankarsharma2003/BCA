@@ -1,0 +1,25 @@
+mysql> use world;
+Database changed
+mysql> desc city;
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| ID          | int      | NO   | PRI | NULL    | auto_increment |
+| Name        | char(35) | NO   |     |         |                |
+| CountryCode | char(3)  | NO   | MUL |         |                |
+| District    | char(20) | NO   |     |         |                |
+| Population  | int      | NO   |     | 0       |                |
++-------------+----------+------+-----+---------+----------------+
+5 rows in set (0.06 sec)
+
+mysql> select * from city where name in (select name from city where district= 'Uttaranchal');
++------+------------------------+-------------+-------------+------------+
+| ID   | Name                   | CountryCode | District    | Population |
++------+------------------------+-------------+-------------+------------+
+| 1117 | Dehra Dun              | IND         | Uttaranchal |     270159 |
+| 1213 | Hardwar (Haridwar)     | IND         | Uttaranchal |     147305 |
+| 1318 | Haldwani-cum-Kathgodam | IND         | Uttaranchal |     104195 |
++------+------------------------+-------------+-------------+------------+
+3 rows in set (0.01 sec)
+
+mysql>

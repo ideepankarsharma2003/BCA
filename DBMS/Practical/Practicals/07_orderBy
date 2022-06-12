@@ -1,0 +1,171 @@
+mysql> desc city;
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| ID          | int      | NO   | PRI | NULL    | auto_increment |
+| Name        | char(35) | NO   |     |         |                |
+| CountryCode | char(3)  | NO   | MUL |         |                |
+| District    | char(20) | NO   |     |         |                |
+| Population  | int      | NO   |     | 0       |                |
++-------------+----------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> select count(*) as No_of_Cities , District from city where countrycode='IND'  group by district order by district ;
++--------------+-------------------+
+| No_of_Cities | District          |
++--------------+-------------------+
+|           35 | Andhra Pradesh    |
+|            4 | Assam             |
+|           13 | Bihar             |
+|            1 | Chandigarh        |
+|            7 | Chhatisgarh       |
+|            3 | Delhi             |
+|           21 | Gujarat           |
+|           12 | Haryana           |
+|            2 | Jammu and Kashmir |
+|            8 | Jharkhand         |
+|           17 | Karnataka         |
+|            7 | Kerala            |
+|           21 | Madhya Pradesh    |
+|           35 | Maharashtra       |
+|            1 | Manipur           |
+|            1 | Meghalaya         |
+|            1 | Mizoram           |
+|            7 | Orissa            |
+|            1 | Pondicherry       |
+|            9 | Punjab            |
+|           14 | Rajasthan         |
+|           28 | Tamil Nadu        |
+|            1 | Tripura           |
+|           43 | Uttar Pradesh     |
+|            3 | Uttaranchal       |
+|           46 | West Bengali      |
++--------------+-------------------+
+26 rows in set (0.00 sec)
+
+mysql> select count(*) as No_of_Cities , District from city where countrycode='IND'  group by district order by No_of_cities desc;
++--------------+-------------------+
+| No_of_Cities | District          |
++--------------+-------------------+
+|           46 | West Bengali      |
+|           43 | Uttar Pradesh     |
+|           35 | Maharashtra       |
+|           35 | Andhra Pradesh    |
+|           28 | Tamil Nadu        |
+|           21 | Gujarat           |
+|           21 | Madhya Pradesh    |
+|           17 | Karnataka         |
+|           14 | Rajasthan         |
+|           13 | Bihar             |
+|           12 | Haryana           |
+|            9 | Punjab            |
+|            8 | Jharkhand         |
+|            7 | Kerala            |
+|            7 | Chhatisgarh       |
+|            7 | Orissa            |
+|            4 | Assam             |
+|            3 | Delhi             |
+|            3 | Uttaranchal       |
+|            2 | Jammu and Kashmir |
+|            1 | Chandigarh        |
+|            1 | Pondicherry       |
+|            1 | Manipur           |
+|            1 | Tripura           |
+|            1 | Mizoram           |
+|            1 | Meghalaya         |
++--------------+-------------------+
+26 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> select* from employee;
++-------+---------+--------+------------+
+| empID | empName | deptNo | empContact |
++-------+---------+--------+------------+
+| 1     | Amit    |     11 |      12345 |
+| 2     | Rohan   |     12 |      67892 |
+| 3     | Sham    |     13 |      23499 |
+| 4     | Riya    |     14 |      79282 |
+| 5     | Harman  |     15 |      57123 |
+| 6     | Parth   |     16 |      45721 |
+| 7     | Naveen  |     17 |      59231 |
+| 8     | Adarsh  |     18 |      57781 |
+| 9     | Teena   |     19 |      23491 |
++-------+---------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select* from employee ORDER BY empContact asc, deptNo desc;
++-------+---------+--------+------------+
+| empID | empName | deptNo | empContact |
++-------+---------+--------+------------+
+| 1     | Amit    |     11 |      12345 |
+| 9     | Teena   |     19 |      23491 |
+| 3     | Sham    |     13 |      23499 |
+| 6     | Parth   |     16 |      45721 |
+| 5     | Harman  |     15 |      57123 |
+| 8     | Adarsh  |     18 |      57781 |
+| 7     | Naveen  |     17 |      59231 |
+| 2     | Rohan   |     12 |      67892 |
+| 4     | Riya    |     14 |      79282 |
++-------+---------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE INDEX idx ON employee(empName ASC, deptNo DESC);
+Query OK, 0 rows affected (1.70 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show index from employee;
++----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table    | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| employee |          0 | PRIMARY  |            1 | empID       | A         |           9 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| employee |          1 | deptNo   |            1 | deptNo      | A         |           9 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| employee |          1 | idx      |            1 | empName     | A         |           9 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| employee |          1 | idx      |            2 | deptNo      | D         |           9 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+4 rows in set (0.53 sec)
+
+mysql>
+
+mysql> select* from employee;
++-------+---------+--------+------------+
+| empID | empName | deptNo | empContact |
++-------+---------+--------+------------+
+| 1     | Amit    |     11 |      12345 |
+| 2     | Rohan   |     12 |      67892 |
+| 3     | Sham    |     13 |      23499 |
+| 4     | Riya    |     14 |      79282 |
+| 5     | Harman  |     15 |      57123 |
+| 6     | Parth   |     16 |      45721 |
+| 7     | Naveen  |     17 |      59231 |
+| 8     | Adarsh  |     18 |      57781 |
+| 9     | Teena   |     19 |      23491 |
++-------+---------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select* from employee ORDER BY empName, deptNo;
++-------+---------+--------+------------+
+| empID | empName | deptNo | empContact |
++-------+---------+--------+------------+
+| 8     | Adarsh  |     18 |      57781 |
+| 1     | Amit    |     11 |      12345 |
+| 5     | Harman  |     15 |      57123 |
+| 7     | Naveen  |     17 |      59231 |
+| 6     | Parth   |     16 |      45721 |
+| 4     | Riya    |     14 |      79282 |
+| 2     | Rohan   |     12 |      67892 |
+| 3     | Sham    |     13 |      23499 |
+| 9     | Teena   |     19 |      23491 |
++-------+---------+--------+------------+
+9 rows in set (0.02 sec)
+
+
+
+
+
+
+
+

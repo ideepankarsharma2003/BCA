@@ -1,0 +1,173 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use bca;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_bca |
++---------------+
+| department    |
+| employee      |
+| shopcart      |
+| students      |
+| user          |
++---------------+
+5 rows in set (0.04 sec)
+
+mysql> desc shopcart;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| shop_id       | int         | NO   | PRI | NULL    |       |
+| shop_name     | varchar(20) | YES  |     | NULL    |       |
+| item_name     | varchar(20) | YES  |     | NULL    |       |
+| item_quantity | int         | YES  |     | NULL    |       |
+| price         | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from shopcart;
++---------+-----------------+-----------------+---------------+-------+
+| shop_id | shop_name       | item_name       | item_quantity | price |
++---------+-----------------+-----------------+---------------+-------+
+|       1 | Joshi Chaiwala  | Momo            |             5 |    20 |
+|       2 | Joshi Chaiwala  | Milk chai       |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa          |             5 |    35 |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |             1 |    50 |
+|       5 | Sooraj da Dhaba | Jalebi          |             5 |    50 |
+|       6 | Boogilal        | kurkure         |             1 |     5 |
+|       7 | Boogilal        | cream-roll      |             1 |    10 |
+|       8 | Joshi Chaiwala  | pani poori      |            25 |    15 |
+|       9 | Khan Shaab      | Sugarcane Juice |             1 |    15 |
+|      10 | Siddhu Paaji    | Lassi           |             1 |    25 |
++---------+-----------------+-----------------+---------------+-------+
+10 rows in set (0.02 sec)
+
+mysql> Create view v as (Select shop_name, item_name from shopcart where price >10);
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> select * from v;
++-----------------+-----------------+
+| shop_name       | item_name       |
++-----------------+-----------------+
+| Joshi Chaiwala  | Momo            |
+| Joshi Chaiwala  | Milk chai       |
+| Sooraj da Dhaba | samosa          |
+| Sooraj da Dhaba | Aloo-Chutney    |
+| Sooraj da Dhaba | Jalebi          |
+| Joshi Chaiwala  | pani poori      |
+| Khan Shaab      | Sugarcane Juice |
+| Siddhu Paaji    | Lassi           |
++-----------------+-----------------+
+8 rows in set (0.01 sec)
+
+mysql> Create or replace view v as (Select shop_id, shop_name, item_name from shopcart where price >10);
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> select * from v;
++---------+-----------------+-----------------+
+| shop_id | shop_name       | item_name       |
++---------+-----------------+-----------------+
+|       1 | Joshi Chaiwala  | Momo            |
+|       2 | Joshi Chaiwala  | Milk chai       |
+|       3 | Sooraj da Dhaba | samosa          |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |
+|       5 | Sooraj da Dhaba | Jalebi          |
+|       8 | Joshi Chaiwala  | pani poori      |
+|       9 | Khan Shaab      | Sugarcane Juice |
+|      10 | Siddhu Paaji    | Lassi           |
++---------+-----------------+-----------------+
+8 rows in set (0.00 sec)
+
+mysql> Insert into v values(11, 'Kannu', 'Chai');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> Insert into v values(12, 'Chapri-Soda', 'Crax');
+Query OK, 1 row affected (0.09 sec)
+
+mysql>
+mysql>
+mysql> select * from v;
++---------+-----------------+-----------------+
+| shop_id | shop_name       | item_name       |
++---------+-----------------+-----------------+
+|       1 | Joshi Chaiwala  | Momo            |
+|       2 | Joshi Chaiwala  | Milk chai       |
+|       3 | Sooraj da Dhaba | samosa          |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |
+|       5 | Sooraj da Dhaba | Jalebi          |
+|       8 | Joshi Chaiwala  | pani poori      |
+|       9 | Khan Shaab      | Sugarcane Juice |
+|      10 | Siddhu Paaji    | Lassi           |
++---------+-----------------+-----------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from shop_cart;
+ERROR 1146 (42S02): Table 'bca.shop_cart' doesn't exist
+mysql> select * from shopcart;
++---------+-----------------+-----------------+---------------+-------+
+| shop_id | shop_name       | item_name       | item_quantity | price |
++---------+-----------------+-----------------+---------------+-------+
+|       1 | Joshi Chaiwala  | Momo            |             5 |    20 |
+|       2 | Joshi Chaiwala  | Milk chai       |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa          |             5 |    35 |
+|       4 | Sooraj da Dhaba | Aloo-Chutney    |             1 |    50 |
+|       5 | Sooraj da Dhaba | Jalebi          |             5 |    50 |
+|       6 | Boogilal        | kurkure         |             1 |     5 |
+|       7 | Boogilal        | cream-roll      |             1 |    10 |
+|       8 | Joshi Chaiwala  | pani poori      |            25 |    15 |
+|       9 | Khan Shaab      | Sugarcane Juice |             1 |    15 |
+|      10 | Siddhu Paaji    | Lassi           |             1 |    25 |
+|      11 | Kannu           | Chai            |          NULL |  NULL |
+|      12 | Chapri-Soda     | Crax            |          NULL |  NULL |
++---------+-----------------+-----------------+---------------+-------+
+12 rows in set (0.00 sec)
+
+mysql> delete from v where item_name like 'A%';
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from v;
++---------+-----------------+-----------------+
+| shop_id | shop_name       | item_name       |
++---------+-----------------+-----------------+
+|       1 | Joshi Chaiwala  | Momo            |
+|       2 | Joshi Chaiwala  | Milk chai       |
+|       3 | Sooraj da Dhaba | samosa          |
+|       5 | Sooraj da Dhaba | Jalebi          |
+|       8 | Joshi Chaiwala  | pani poori      |
+|       9 | Khan Shaab      | Sugarcane Juice |
+|      10 | Siddhu Paaji    | Lassi           |
++---------+-----------------+-----------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from shopcart;
++---------+-----------------+-----------------+---------------+-------+
+| shop_id | shop_name       | item_name       | item_quantity | price |
++---------+-----------------+-----------------+---------------+-------+
+|       1 | Joshi Chaiwala  | Momo            |             5 |    20 |
+|       2 | Joshi Chaiwala  | Milk chai       |             1 |    20 |
+|       3 | Sooraj da Dhaba | samosa          |             5 |    35 |
+|       5 | Sooraj da Dhaba | Jalebi          |             5 |    50 |
+|       6 | Boogilal        | kurkure         |             1 |     5 |
+|       7 | Boogilal        | cream-roll      |             1 |    10 |
+|       8 | Joshi Chaiwala  | pani poori      |            25 |    15 |
+|       9 | Khan Shaab      | Sugarcane Juice |             1 |    15 |
+|      10 | Siddhu Paaji    | Lassi           |             1 |    25 |
+|      11 | Kannu           | Chai            |          NULL |  NULL |
+|      12 | Chapri-Soda     | Crax            |          NULL |  NULL |
++---------+-----------------+-----------------+---------------+-------+
+11 rows in set (0.00 sec)
+
+mysql> drop view v;
+Query OK, 0 rows affected (0.39 sec)
