@@ -1,0 +1,115 @@
+mysql> use bca;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_bca   |
++-----------------+
+| class           |
+| constrainttable |
+| cust            |
+| department      |
+| employee        |
+| fg              |
+| shopcart        |
+| students        |
+| user            |
++-----------------+
+9 rows in set (0.00 sec)
+
+mysql> select * from department;
++------------+--------+--------------+--------+
+| deptName   | deptNo | deptLocation | deptID |
++------------+--------+--------------+--------+
+| bca        |     11 | SecondFloor  |     22 |
+| bfd        |     12 | ThirdFloor   |     33 |
+| bba        |     13 | FourthFloor  |     44 |
+| bsc        |     14 | GroundFloor  |     55 |
+| btech      |     15 | SixthFloor   |     66 |
+| cs         |     16 | FifthFloor   |     77 |
+| mechanical |     17 | FirstFloor   |     88 |
+| civil      |     18 | EigthFloor   |     88 |
+| diploma    |     19 | NinthFloor   |     11 |
++------------+--------+--------------+--------+
+9 rows in set (0.00 sec)
+
+mysql> select * from employee;
++-------+---------+--------+------------+
+| empID | empName | deptNo | empContact |
++-------+---------+--------+------------+
+| 1     | Amit    |     11 |      12345 |
+| 2     | Rohan   |     12 |      67892 |
+| 3     | Sham    |     13 |      23499 |
+| 4     | Riya    |     14 |      79282 |
+| 5     | Harman  |     15 |      57123 |
+| 6     | Parth   |     16 |      45721 |
+| 7     | Naveen  |     17 |      59231 |
+| 8     | Adarsh  |     18 |      57781 |
+| 9     | Teena   |     19 |      23491 |
++-------+---------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select * from employee NATURAL JOIN department;
++--------+-------+---------+------------+------------+--------------+--------+
+| deptNo | empID | empName | empContact | deptName   | deptLocation | deptID |
++--------+-------+---------+------------+------------+--------------+--------+
+|     11 | 1     | Amit    |      12345 | bca        | SecondFloor  |     22 |
+|     12 | 2     | Rohan   |      67892 | bfd        | ThirdFloor   |     33 |
+|     13 | 3     | Sham    |      23499 | bba        | FourthFloor  |     44 |
+|     14 | 4     | Riya    |      79282 | bsc        | GroundFloor  |     55 |
+|     15 | 5     | Harman  |      57123 | btech      | SixthFloor   |     66 |
+|     16 | 6     | Parth   |      45721 | cs         | FifthFloor   |     77 |
+|     17 | 7     | Naveen  |      59231 | mechanical | FirstFloor   |     88 |
+|     18 | 8     | Adarsh  |      57781 | civil      | EigthFloor   |     88 |
+|     19 | 9     | Teena   |      23491 | diploma    | NinthFloor   |     11 |
++--------+-------+---------+------------+------------+--------------+--------+
+9 rows in set (0.00 sec)
+
+mysql> select empId, deptlocation from employee INNER JOIN department ON employee.deptno= department.deptno;
++-------+--------------+
+| empId | deptlocation |
++-------+--------------+
+| 1     | SecondFloor  |
+| 2     | ThirdFloor   |
+| 3     | FourthFloor  |
+| 4     | GroundFloor  |
+| 5     | SixthFloor   |
+| 6     | FifthFloor   |
+| 7     | FirstFloor   |
+| 8     | EigthFloor   |
+| 9     | NinthFloor   |
++-------+--------------+
+9 rows in set (0.02 sec)
+
+mysql> select empId, department.deptno, deptlocation from employee LEFT JOIN department ON employee.deptno= department.deptno;
++-------+--------+--------------+
+| empId | deptno | deptlocation |
++-------+--------+--------------+
+| 1     |     11 | SecondFloor  |
+| 2     |     12 | ThirdFloor   |
+| 3     |     13 | FourthFloor  |
+| 4     |     14 | GroundFloor  |
+| 5     |     15 | SixthFloor   |
+| 6     |     16 | FifthFloor   |
+| 7     |     17 | FirstFloor   |
+| 8     |     18 | EigthFloor   |
+| 9     |     19 | NinthFloor   |
++-------+--------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> select empname, deptname, deptlocation from employee RIGHT JOIN department ON employee.deptno= department.deptno;
++---------+------------+--------------+
+| empname | deptname   | deptlocation |
++---------+------------+--------------+
+| Amit    | bca        | SecondFloor  |
+| Rohan   | bfd        | ThirdFloor   |
+| Sham    | bba        | FourthFloor  |
+| Riya    | bsc        | GroundFloor  |
+| Harman  | btech      | SixthFloor   |
+| Parth   | cs         | FifthFloor   |
+| Naveen  | mechanical | FirstFloor   |
+| Adarsh  | civil      | EigthFloor   |
+| Teena   | diploma    | NinthFloor   |
++---------+------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql>

@@ -1,0 +1,119 @@
+mysql> use bca;
+Database changed
+mysql> create table class (id int , name varchar(20));
+Query OK, 0 rows affected (2.24 sec)
+
+mysql> insert into class values(1,'Abhi');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into class values(2, 'Adam');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into class values(4, 'Alex');
+Query OK, 1 row affected (0.07 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from class;
++------+------+
+| id   | name |
++------+------+
+|    1 | Abhi |
+|    2 | Adam |
+|    4 | Alex |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+mysql> select * from class;
++------+-----------+
+| id   | name      |
++------+-----------+
+|    1 | Abhi      |
+|    2 | Adam      |
+|    4 | Alex      |
+|    5 | Abhijit   |
+|    6 | Chris     |
+|    7 | Bravo     |
+|    6 | Chris     |
+|    7 | Bravo     |
+|   10 | Deepankar |
+|   11 | AMAN      |
+|   11 | ajay      |
++------+-----------+
+11 rows in set (0.02 sec)
+
+mysql> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into class values(20, 'Dean');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> savepoint A;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into class values(21, 'ram');savepoint B;
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into class values(21, 'ram aman');savepoint c;
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from class;
++------+-----------+
+| id   | name      |
++------+-----------+
+|    1 | Abhi      |
+|    2 | Adam      |
+|    4 | Alex      |
+|    5 | Abhijit   |
+|    6 | Chris     |
+|    7 | Bravo     |
+|    6 | Chris     |
+|    7 | Bravo     |
+|   10 | Deepankar |
+|   11 | AMAN      |
+|   11 | ajay      |
+|   20 | Dean      |
+|   21 | ram       |
+|   21 | ram aman  |
++------+-----------+
+14 rows in set (0.01 sec)
+
+mysql> rollback to A;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from Class;
++------+-----------+
+| id   | name      |
++------+-----------+
+|    1 | Abhi      |
+|    2 | Adam      |
+|    4 | Alex      |
+|    5 | Abhijit   |
+|    6 | Chris     |
+|    7 | Bravo     |
+|    6 | Chris     |
+|    7 | Bravo     |
+|   10 | Deepankar |
+|   11 | AMAN      |
+|   11 | ajay      |
+|   20 | Dean      |
++------+-----------+
+12 rows in set (0.00 sec)
+
+
+mysql> commit;
+Query OK, 0 rows affected (0.10 sec)
+
+mysql>

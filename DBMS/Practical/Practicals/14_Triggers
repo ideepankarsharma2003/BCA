@@ -1,0 +1,37 @@
+mysql> CREATE TABLE people (age INT, name varchar(150));
+Query OK, 0 rows affected (2.10 sec)
+
+mysql> desc people;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| age   | int          | YES  |     | NULL    |       |
+| name  | varchar(150) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+2 rows in set (0.03 sec)
+
+mysql> delimiter //
+mysql> CREATE TRIGGER agecheck BEFORE INSERT ON people FOR EACH ROW IF NEW.age < 0
+    -> THEN SET NEW.age = 0; END IF;//
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> INSERT INTO people VALUES (-20, 'Sid'), (30, 'Josh'), (1, 'Deepankar'), (-34, 'Zayn MAlik');//
+Query OK, 4 rows affected (0.13 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql>
+mysql>
+mysql> select* from people;
+    -> //
++------+------------+
+| age  | name       |
++------+------------+
+|    0 | Sid        |
+|   30 | Josh       |
+|    1 | Deepankar  |
+|    0 | Zayn MAlik |
++------+------------+
+4 rows in set (0.00 sec)
+
+mysql>
