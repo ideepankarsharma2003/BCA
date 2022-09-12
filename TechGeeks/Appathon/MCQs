@@ -1,0 +1,217 @@
+1. Which unit is responsible for converting the data received from the user into
+computer understandable format?
+a) Memory Unit
+b) Arithmetic & Logic Unit
+c) Input Unit
+d) Output Unit
+----
+Answer: c
+
+2. The only language which the computer understands is ______________
+a) Assembly Language
+b) Binary Language
+c) BASIC
+d) C Language
+----
+Answer: b
+
+3. The smallest unit of data in computer is ________________
+a) Byte
+b) Nibble
+c) Bit
+d) KB
+----
+Answer: c
+
+4. One nibble is equivalent to how many bits?
+a) 2
+b) 4
+c) 8
+d) 1
+----
+Answer: b
+
+5. Which of the following describes the correct format of an input instruction?
+a) IN 82
+b) INPUT 82
+c) INP 82
+d) 82 INP
+----
+Answer: a
+
+6. The input machine which originated in the United States around 1880s is a ___________
+a) Mouse
+b) Joystick
+c) Keyboard
+d) Bar Code Reader
+----
+Answer: c
+
+7. What does the COMPUTER stands for?
+a) Commonly Operated Machines Used in Technical and Educational Research
+b) Commonly Occupied Machines Used in Technical and Educational Research
+c) Commonly Operated Machines Used in Technical and Environmental Research
+d) Commonly Oriented Machines Used in Technical and Educational Research
+----
+Answer: a
+
+8. 1 yottabyte = ______________
+a) 1024 TB
+b) 1024 EB
+c) 1024 ZB
+d) 1024 PB
+----
+Answer: c
+
+9. Which of the following is not a function of the Input Unit?
+a) It reads instructions and data from the outside world.
+b) It converts the data into computer acceptable format.
+c) It makes the data into user understandable format.
+d) It supplies the data and instructions to the computer for further processing.
+----
+Answer: c
+
+10. Label the parts 1 and 2:
+a) 1.ALU 2. MU
+b) 1.Output unit 2.Input Unit
+c) 1.MU 2. ALU
+d) 1.Input Unit 2.Output Unit
+----
+Answer: d
+
+1. The process of producing useful information for the user is called ___________
+a) Controlling
+b) Outputting
+c) Inputting
+d) Processing
+----
+Answer: b
+
+
+2. The output unit coverts the data entered by the user into computer
+understandable form.
+a) True
+b) False
+----
+Answer: b
+
+3. VDU stands for __________
+a) Virtual Display Unit
+b) Visual Display Unit
+c) Virtual Detection Unit
+d) Visual Detection Unit
+----
+Answer: b
+
+
+4. What does SVGA stands for?
+a) Standard Visual Graphics Array
+b) Super Visual Graphics Array
+c) Standard Video Graphics Array
+d) Super Video Graphics Array
+----
+Answer: d
+
+
+5. The devices that used to give single or multiple colored images and drawings
+are ____________
+a) Monitors
+b) Printers
+c) Plotters
+d) VDUs
+----
+Answer: c
+
+
+6. A special request originated from some device to the CPU to acquire some of its
+time is called ___________
+a) Disturbance
+b) Attenuation
+c) Interrupt
+d) Noise
+----
+Answer: c
+
+
+7. Line Printers that print one line at a time are _________
+a) Laser Printers
+b) Inkjet Printers
+c) Drum Printers
+d) Chain Printers
+----
+Answer: c
+
+
+8. A ___________________ monitor looks like a television and are normally used
+with non-portable computer systems.
+a) CRT
+b) LCD
+c) LED
+d) Flat Panel Monitors
+----
+Answer: a
+
+
+9. Which of the following is not a function of the Output Unit?
+a) It produces results that can be easily understood by the user
+b) It accepts the results produced by the computer
+c) It supplies the data and instructions to the outside world
+d) It supplies the data and instructions to the computer for further processing
+----
+Answer: d
+
+
+10. PCI stands for _________
+a) Peripheral Component Interconnect
+b) Partial Component Interconnect
+c) Peripheral Component Interaction
+d) Partial Component Interaction
+----
+Answer: a
+
+
+1. Components that provide internal storage to the CPU are ______
+a) Registers
+b) Program Counters
+c) Controllers
+d) Internal chips
+----
+Answer: a
+
+
+2. Saving data and instructions to make them readily available is the job of
+__________
+a) Storage Unit
+b) Cache Unit
+c) Input Unit
+d) Output Unit
+----
+Answer: a
+
+
+3. The two basic types of memory in a computer are ________
+a) Primary and major
+b) Primary and Secondary
+c) Minor and Major
+d) Main and virtual
+----
+Answer: b
+
+
+4. Which of the following is used to hold running program instructions?
+a) Primary Storage
+b) Virtual Storage
+c) Internal Storage
+d) Minor Devices
+----
+Answer: a
+
+
+5. Which of the following is non-volatile storage?
+a) Backup
+b) Secondary
+c) Primary
+d) Cache
+----
+Answer: b
+
