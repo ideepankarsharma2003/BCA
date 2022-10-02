@@ -41,6 +41,38 @@ DatePicker
 Spinner     -----> type of view that hold items in form of a dropdown menu available for user selection. It creates a menu with multiple options where a user can select any one option.
  */
 
+AutocompleteTextview --> editable text view that shows completion suggestions automatically while the user is typing.
+public class AutoCompleteTextView extends EditText implements Filter.FilterListener;
+// XML attributes
+android:completionHint	            ===>Defines the hint displayed in the drop down menu. 
+android:completionHintView	        ===>Defines the hint view displayed in the drop down menu. 
+android:completionThreshold	        ===>Defines the number of characters that the user must type before completion suggestions are displayed in a drop down menu. 
+android:dropDownAnchor	            ===>View to anchor the auto-complete dropdown to. 
+android:dropDownHeight	            ===>Specifies the basic height of the dropdown. 
+android:dropDownHorizontalOffset	===>Amount of pixels by which the drop down should be offset horizontally. 
+android:dropDownSelector	        ===>Selector in a drop down list. 
+android:dropDownVerticalOffset	    ===>Amount of pixels by which the drop down should be offset vertically. 
+android:dropDownWidth	            ===>Specifies the basic width of the dropdown. 
+android:popupBackground	            ===>The background to use for the popup window. 
+
+
+ public class CountriesActivity extends Activity {
+     protected void onCreate(Bundle icicle) {
+         super.onCreate(icicle);
+         setContentView(R.layout.countries);
+
+         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                 android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+         AutoCompleteTextView textView = (AutoCompleteTextView)
+                 findViewById(R.id.countries_list);
+         textView.setAdapter(adapter);
+     }
+
+     private static final String[] COUNTRIES = new String[] {
+         "Belgium", "France", "Italy", "Germany", "Spain"
+     };
+ }
+ 
 
 Toast
 /*A toast provides simple feedback about an operation in a small popup. It only fills the amount of space required for the message and the current activity remains visible and interactive. Toasts automatically disappear after a timeout.*/
