@@ -1,9 +1,417 @@
+Views 
+	• Button 
+	• Text View 
+	• Edit Text 
+	• Radio Button 
+	• Image View 
+	• Toast 
+	• Adapter 
+	• Spinner 
+	• List View 
+	• Grid View
+	• ToggleButton 
+	• AutocompleteTextview
+
+
+
+/**
+    Android WebView is used to load and display the web pages in android.
+    A WebView is useful when we need to increase control over the UI and advanced configuration options in our app.
+
+
+ */
+
+View ----> android.view.View;
+// super class for all the GUI components like TextView, ImageView, Button etc.
+class View extends Object implements Drawable.Callback, KeyEvent.Callback, AccessibilityEventSource;
+
+
+/**
+most commonly used android View classes:
+TextView    -----> used to show pre-defined text on display screen
+EditText    -----> TextView which is editable
+Button      -----> is a component which can be pressed or clicked by the user to perform an action.     
+ImageView   -----> is used to show any picture on the user interface.
+ImageButton -----> using image as a button
+CheckBox
+RadioButton
+ListView
+GridView
+DatePicker
+Spinner     -----> type of view that hold items in form of a dropdown menu available for user selection. It creates a menu with multiple options where a user can select any one option.
+ */
+
+
+Toast
+/*A toast provides simple feedback about an operation in a small popup. It only fills the amount of space required for the message and the current activity remains visible and interactive. Toasts automatically disappear after a timeout.*/
+Context context = getApplicationContext();
+CharSequence text = "sending message...";
+int duration = Toast.LENGTH_SHORT;
+Toast toast = Toast.makeText(context, text, duration);
+toast.show();
+
+
+
+Toggle Buttons ---> a toggle button allows the user to change a setting between two states.
+ToggleButton toggle = (ToggleButton) findViewById(R.id.togglebutton);
+toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            // The toggle is enabled
+        } else {
+            // The toggle is disabled
+        }
+    }
+});
+
+
+ ListView -----> used when you have to show items in a vertically scrolling list.
+// Attribute	                Description
+android:divider     	----> Using this attribute we can specify a divider between List items. A drawable or any color can be specified as a value for this attribute.
+android:dividerHeight	----> Used to specify height of the divider.
+ <ListView
+    android:id="@+id/listView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@android:color/black"
+    android:dividerHeight="1dp"/>
+
+
+GridView ----> is used to display grid of View objects.
+<GridView
+    android:id="@+id/gridView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:verticalSpacing="2dp"
+    android:horizontalSpacing="2dp"
+    android:numColumns="2"/>
+
+
+TextView
+// Attribute	                Description
+android:text	        -----> Used to specify the text to be displayed in the TextView
+android:textSize	    -----> Using this attribute we can control the size of the text.
+android:textColor	    -----> Using this attribute we can specify the color of our text.
+android:textAllCaps	    -----> If set True, this will make the text appear in upper case.
+android:letterSpacing	-----> Using this attribute we can set the spacing between letters of the text.
+android:hint	        -----> This attribute is used to show a default text, if no text is set in the TextView. Generally, when we populate a TextView using dynamic data coming from server(using the programmatic approach), then we set this attribute to show some default text in the TextView until data is fetched from server.
+
+
+<TextView
+    android:id="@+id/st"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Studytonight"
+    android:textSize="45sp"
+    android:padding="20dp"
+    android:textColor="#DD2C00"/>
+
+
+
+EditText
+<EditText
+    android:id="@+id/et_address"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Write your email Address here"
+    android:textSize="20sp"
+    android:inputType="textWebEmailAddress"
+    android:imeOptions="actionDone"
+    android:maxLines="3"/>
+
+Button
+<Button
+    android:id="@+id/btn_submit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:textColor="@android:color/holo_blue_dark"
+    />
+
+public class MainActivity extends Activity {
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+        // creating instance of button
+        Button b = (Button) findViewById(R.id.btn_submit);
+        // setting on click event listener
+        b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+             
+                // Perform action on click
+                 
+            }
+        });
+    }
+}
+
+
+
+
+
+ImageView
+// Attribute	            Description
+android:maxHeight	---->   Used to specify a maximum height for this view.
+android:maxWidth	---->   Used to specify a maximum width for this view.
+android:src	        ---->   Sets a drawable as the content for this ImageView.
+android:scaleType	---->   Controls how the image should be resized or moved to match the size of the ImageView.
+android:tint	    ---->   Tints the color of the image in the ImageView.
+
+<ImageView
+    android:id="@+id/img"   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scaleType="fitCenter"
+    android:src="@drawable/img_nature"/>
+
+ImageButton ----> Image as a Button
+<ImageButton
+    android:id="@+id/imgButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scaleType="fitCenter"
+    android:src="@drawable/img_nature"/>
+
+imageButton = (ImageButton)findViewById(R.id.imgButton);
+imageButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        
+        // do anything here
+        
+    }
+});
+
+
+
+
+Radio Button
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRg"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:showDividers="beginning|middle|end"
+        android:layout_marginTop="10dp"
+        android:id="@+id/radioGroup" >
+
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXCELLENT"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GOOD"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OKAY"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POOR"
+            android:checked="false" />
+
+    </RadioGroup>
+
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    // These are the global variables
+    RadioGroup radioGroup;
+    RadioButton selectedRadioButton;
+    Button buttonSubmit;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // layout instances
+        buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        /*
+            Submit Button
+        */
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                // get the selected RadioButton of the group
+                selectedRadioButton  = (RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
+                //get RadioButton text
+                String yourVote = selectedRadioButton.getText().toString();
+                // display it as Toast to the user
+                Toast.makeText(MainActivity.this, "Selected Radio Button is:" + yourVote , Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+}
+
+
+
+
+// CheckBox
+<TextView
+    android:id="@+id/tvCb"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/radioGroup"
+    android:gravity="center"
+    android:text="Give Your Suggestions Here."
+    android:layout_marginTop="65dp"
+    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+<CheckBox
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text=" I really enjoy this lesson."
+    android:id="@+id/cb1"
+    android:layout_below="@+id/tvCb"
+    android:layout_centerHorizontal="true"
+    android:checked="false"/>
+
+<CheckBox
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I will prefer this lesson over any other."
+    android:id="@+id/cb2"
+    android:layout_below="@+id/cb1"
+    android:layout_centerHorizontal="true"
+    android:checked="false"/>
+
+<CheckBox
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I would like to hear more from you."
+    android:id="@+id/cb3"
+    android:layout_below="@+id/cb2"
+    android:layout_centerHorizontal="true"
+    android:checked="false"/>
+
+<CheckBox
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I am satisfied with the content and full description."
+    android:id="@+id/cb4"
+    android:layout_below="@+id/cb3"
+    android:layout_centerHorizontal="true"
+    android:checked="false"/>
+
+
+
+CheckBox cb1, cb2, cb3, cb4;
+cb1 = (CheckBox) findViewById(R.id.cb1);
+cb2 = (CheckBox) findViewById(R.id.cb2);
+cb3 = (CheckBox) findViewById(R.id.cb3);
+cb4 = (CheckBox) findViewById(R.id.cb4);
+/*
+    Submit Button
+*/
+buttonSubmit.setOnClickListener(new View.OnClickListener() {
+
+    @Override
+    public void onClick(View v) {
+        
+    
+        String checkBoxChoices = "";
+    
+        if (cb1.isChecked()) {
+            checkBoxChoices += cb1.getText().toString() + "\tYES";
+        }
+               
+    }
+});
+
+
+
+
+// Adapter 
+/**What is an Adapter?
+An adapter acts like a bridge between a data source and the user interface. It reads data from various data sources, coverts it into View objects and provide it to the linked Adapter view to create UI components. */
+ArrayAdapter<String> adapter =  new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, days);
+
+
+
+
+// Spinner
+<Spinner
+    android:id="@+id/days_spinner"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+
+
+String days[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+ArrayAdapter<String> adapter =  new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, days);
+mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {    
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) 
+    { 
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) 
+    { 
+        // If an option is removed then what to do
+        // or anything else
+    }
+
+});
+
+
+
+// List View, Grid View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // https://www.studytonight.com/android/activity-in-android
 APP COMPONENTS
     • Activity 
 	• Service 
-	• Broadcast 
-	• Receiver
+	• BroadcastReceiver
 	• Content Provider
 
 /**
@@ -141,16 +549,80 @@ startService(intent);
 
 
 
+/***
+    Broadcast in android is the system-wide events that can occur when the device starts, when a message is received on the device or when incoming calls are received, or when a device goes to airplane mode, etc. Broadcast Receivers are used to respond to these system-wide events.  
+
+    Android apps can send or receive broadcast messages from the Android system and other Android apps, similar to the publish-subscribe design pattern. These broadcasts are sent when an event of interest occurs. For example, the Android system sends broadcasts when various system events occur, such as when the system boots up or the device starts charging. Apps can also send custom broadcasts, for example, to notify other apps of something that they might be interested in (for example, some new data has been downloaded).
+
+    Apps can register to receive specific broadcasts. When a broadcast is sent, the system automatically routes broadcasts to apps that have subscribed to receive that particular type of broadcast.
+
+    Generally speaking, broadcasts can be used as a messaging system across apps and outside of the normal user flow. However, you must be careful not to abuse the opportunity to respond to broadcasts and run jobs in the background that can contribute to a slow system performance.  
+ */
+
+//  sending broadcasts
+Intent intent = new Intent();
+intent.setAction("com.example.broadcast.MY_NOTIFICATION");
+intent.putExtra("data", "Nothing to see here, move along.");
+sendBroadcast(intent);
+
+// receiving broadcasts
+
+// 1. Manifest declared Receivers
+
+    // Specify the <receiver> element in your app's manifest.
+<receiver android:name=".MyBroadcastReceiver"  android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+    </intent-filter>
+</receiver>
+
+    // Subclass BroadcastReceiver and implement onReceive(Context, Intent). The broadcast receiver in the following example logs and displays the contents of the broadcast:
+public class MyBroadcastReceiver extends BroadcastReceiver {
+        private static final String TAG = "MyBroadcastReceiver";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Action: " + intent.getAction() + "\n");
+            sb.append("URI: " + intent.toUri(Intent.URI_INTENT_SCHEME).toString() + "\n");
+            String log = sb.toString();
+            Log.d(TAG, log);
+            Toast.makeText(context, log, Toast.LENGTH_LONG).show();
+        }
+    }
+
+// 2. Context-registered receivers
+
+    // To register a receiver with a context, perform the following steps:
+        // Create an instance of BroadcastReceiver.
+BroadcastReceiver br = new MyBroadcastReceiver();
+    // Create an IntentFilter and register the receiver by calling registerReceiver(BroadcastReceiver, IntentFilter):
+IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+this.registerReceiver(br, filter);
 
 
 
 
 
+/**
+    Content providers are one of the primary building blocks of Android applications, providing content to applications. They encapsulate data and provide it to applications through the single ContentResolver interface. A content provider is only required if you need to share data between multiple applications.
 
+    For example, the contacts data is used by multiple applications and must be stored in a content provider. 
 
+    ***
+    When a request is made via a ContentResolver the system inspects the authority of the given URI and passes the request to the content provider registered with the authority. The content provider can interpret the rest of the URI however it wants. The UriMatcher class is helpful for parsing URIs.
+ */
+public abstract class ContentProvider
+extends Object implements ComponentCallbacks2;
 
-
-
+// The primary methods that need to be implemented are:
+onCreate();                                         ---->   which is called to initialize the provider
+query(Uri, String[], Bundle, CancellationSignal);   ---->   which returns data to the caller
+insert(Uri, ContentValues);                         ---->   which inserts new data into the content provider
+update(Uri, ContentValues, Bundle);                 ---->   which updates existing data in the content provider
+delete(Uri, Bundle);                                ---->   which deletes data from the content provider
+getType(Uri);                                       ---->   which returns the MIME type of data in the content provider
 
 
 
