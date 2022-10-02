@@ -1,0 +1,287 @@
+// https://www.studytonight.com/android/activity-in-android
+APP COMPONENTS
+    • Activity 
+	• Service 
+	• Broadcast 
+	• Receiver
+	• Content Provider
+
+/**
+    An activity represents a single screen with a user interface just like window or frame of Java. Android activity is the subclass of ContextThemeWrapper class. The Activity class defines the following call backs i.e. events. You don't need to implement all the callbacks methods.
+    An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View).
+
+    What is the difference between a fragment and an activity?
+        Activity is an application component that gives a user interface where the user can interact. The fragment is only part of an activity, it basically contributes its UI to that activity. Fragment is dependent on activity. It can't exist independently.
+ */
+
+//  Activity class is basiclly the soul for Android Widgets.
+                like in human mind: 
+                @Override
+                onSeeingSomethingFunny() 
+                {
+                    start crying;
+                }
+// when the user presses the App icon, the Main Activity is called and the execution starts from the onCreate() method of the Activity class.
+
+ public class Activity
+extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, View.OnCreateContextMenuListener, ComponentCallbacks2;
+
+
+ public class Activity extends ApplicationContext {
+     protected void onCreate(Bundle savedInstanceState);
+
+     protected void onStart();
+
+     protected void onRestart();
+
+     protected void onResume();
+
+     protected void onPause();
+
+     protected void onStop();
+
+     protected void onDestroy();
+ }
+ 
+// 7 Lifecycle methods
+onCreate();     ---->  	called when activity is first created.
+onStart();      ---->   called when activity is becoming visible to the user.
+onResume();     ---->  	called when activity will start interacting with the user.
+onPause();      ---->   called when activity is not visible to the user.
+onStop();       ---->   called when activity is no longer visible to the user.
+onRestart();    ----> 	called after your activity is stopped, prior to start.
+onDestroy();    ----> 	called before the activity is destroyed.
+
+
+setContentView(View); ----> place your UI in the window, created by Activity class.
+onCreate(Bundle); ---->  is where you initialize your activity.
+
+
+
+/** 
+    A Service is an application component that can perform long-running operations in the background. It does not provide a user interface. Once started, a service might continue running for some time, even after the user switches to another application. Additionally, a component can bind to a service to interact with it and even perform interprocess communication (IPC). For example, a service can handle network transactions, play music, perform file I/O, or interact with a content provider, all from the background.
+
+    What is the difference between activity and services in Android?
+        Services are a unique component in Android that allows an application to run in the background to execute long-running operation activities, on the other hand, an activity, like a window or a frame in Java, represents a single screen with a user interface.
+*/
+
+
+// EXTENDING THE SERVICE CLASS
+public class HelloService extends Service {
+  private Looper serviceLooper;
+  private ServiceHandler serviceHandler;
+
+  // Handler that receives messages from the thread
+  private final class ServiceHandler extends Handler {
+      public ServiceHandler(Looper looper) {
+          super(looper);
+      }
+      @Override
+      public void handleMessage(Message msg) {
+          // Normally we would do some work here, like download a file.
+          // For our sample, we just sleep for 5 seconds.
+          try {
+              Thread.sleep(5000);
+          } catch (InterruptedException e) {
+              // Restore interrupt status.
+              Thread.currentThread().interrupt();
+          }
+          // Stop the service using the startId, so that we don't stop
+          // the service in the middle of handling another job
+          stopSelf(msg.arg1);
+      }
+  }
+
+  @Override
+  public void onCreate() {
+    // Start up the thread running the service. Note that we create a
+    // separate thread because the service normally runs in the process's
+    // main thread, which we don't want to block. We also make it
+    // background priority so CPU-intensive work doesn't disrupt our UI.
+    HandlerThread thread = new HandlerThread("ServiceStartArguments",
+            Process.THREAD_PRIORITY_BACKGROUND);
+    thread.start();
+
+    // Get the HandlerThread's Looper and use it for our Handler
+    serviceLooper = thread.getLooper();
+    serviceHandler = new ServiceHandler(serviceLooper);
+  }
+
+  @Override
+  public int onStartCommand(Intent intent, int flags, int startId) {
+      Toast.makeText(this, "service starting", Toast.LENGTH_SHORT).show();
+
+      // For each start request, send a message to start a job and deliver the
+      // start ID so we know which request we're stopping when we finish the job
+      Message msg = serviceHandler.obtainMessage();
+      msg.arg1 = startId;
+      serviceHandler.sendMessage(msg);
+
+      // If we get killed, after returning from here, restart
+      return START_STICKY;
+  }
+
+  @Override
+  public IBinder onBind(Intent intent) {
+      // We don't provide binding, so return null
+      return null;
+  }
+
+  @Override
+  public void onDestroy() {
+    Toast.makeText(this, "service done", Toast.LENGTH_SHORT).show();
+  }
+}
+
+
+// starting the service
+Intent intent = new Intent(this, HelloService.class);
+startService(intent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fragment 
+	• Introduction
+	• Needs Of Fragment 
+	• Lifecycle Of Fragment
+
+/**
+A Fragment represents a reusable portion of your app's UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events. Fragments cannot live on their own--they must be hosted by an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy
+ */
+
+// Creating a Fragment Class
+class ExampleFragment extends Fragment {
+    public ExampleFragment() {
+        super(R.layout.example_fragment);
+    }
+}
+
+/**
+        FRAGMENT LIFECYCLE
+        Each possible Lifecycle state is represented in the Lifecycle.State enum.
+
+            -> INITIALIZED
+            -> CREATED
+            -> STARTED
+            -> RESUMED
+            -> DESTROYED
+*/
+
+Fragment.onCreate();
+Fragment.onStart();
+Fragment.onPause();
+Fragment.onResume();
+Fragment.onStop();
+Fragment.onDestroy();
+
+/*
+Reasons to use Fragments
+1. Dealing with device form-factor differences
+2. Passing information between app screens
+3. User interface organization
+4. Advanced UI metaphors
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intent 
+	• What Is Intent 
+	• Why Intent 
+	• Types Of Intent
+
+/** 
+    INTENT
+        An intent is an abstract description of an operation to be performed. It can be used with startActivity to launch an Activity, broadcastIntent to send it to any interested BroadcastReceiver components, and Context.startService(Intent) or Context.bindService(Intent, ServiceConnection, int) to communicate with a background Service.
+        An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed.
+ */
+
+ /**
+        Android Intent is the message that is passed between components such as activities, content providers, broadcast receivers, services etc.
+
+        It is generally used with startActivity() method to invoke activity, broadcast receivers etc.
+  */
+ public class Intent
+extends Object implements Parcelable, Cloneable
+
+/**
+    WHY INTENT
+        Android intents are mainly used to:
+            -> Start the service
+            -> Launch an activity
+            -> Display a web page
+            -> Display a list of contacts
+            -> Broadcast a message
+            -> Dial a phone call etc.
+*/
+
+/*
+    TYPES OF INTENTS
+  There are two types of intents in android: 
+    1. Implicit Intent
+    2. Explicit Intent
+*/
+
+// 1) Implicit Intent
+    // Implicit Intent doesn't specifiy the component. In such case, intent provides information of available components provided by the system that is to be invoked.
+
+String s= "http://www.javatpoint.com"
+Intent intent=new Intent(Intent.ACTION_VIEW);  
+intent.setData(Uri.parse(s));  
+startActivity(intent);  
+
+// 2) Explicit Intent
+    // Explicit Intent specifies the component. In such case, intent provides the external class to be invoked.
+Intent i = new Intent(getApplicationContext(), ActivityTwo.class);  
+startActivity(i);  
