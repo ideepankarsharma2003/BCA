@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE aliens SYSTEM "AlienType.dtd">
+
+<aliens>
+    <alien aid="A1" lang= "Python">
+        <name>Dhinchak Pooja</name>
+        <salary>50000</salary>
+    </alien>
+    <alien aid="A2" lang= "C">
+        <name>Conda Reddy</name>
+        <salary>120000</salary>
+    </alien> 
+    <alien aid="A3" lang= "Cpp">
+        <name>Conda Reddy</name>
+        <salary>12000</salary>
+    </alien>
+    <alien aid="A4">
+        <name>Ameer Baap Ki Aulad</name>
+        <salary>12000</salary>
+    </alien>
+</aliens>

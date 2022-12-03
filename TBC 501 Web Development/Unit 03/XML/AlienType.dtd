@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT aliens (alien+)> 
+<!-- alien+ means we want more element of alien in aliens, By default (1 parent-1 child) -->             
+<!ELEMENT alien (name, salary)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+<!-- attribute list, ID-> like primary key in DBMS -->             
+<!ATTLIST alien aid ID #REQUIRED>
+<!ATTLIST alien lang (Java|Python|C|Cpp) "C">

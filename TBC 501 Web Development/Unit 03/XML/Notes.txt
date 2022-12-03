@@ -1,0 +1,25 @@
+XML Introduction
+1. eXtensible Markup Language
+2. Transfer data
+3. Configure frameworks ----> Spring
+4. UI designing ----> Android
+
+Rules...
+1. One root tag...
+2. XML is case sensitive
+3. every opening tag needs a closing tag
+4. every attribute value should be inside single('')/double("") quotes
+
+
+XML parser(in Browser) ----> parses the XML code
+
+
+Grammer..
+1. Structure Grammer    -> DTD    -> .dtd {Document Type Definition}
+2. Content Grammer      -> Schema -> .xsd {xml schema definition} 
+
+
+client <=====> server
+1. HTML(HyperText Markup Language)  -> layout, data
+2. XML(eXtensible Markup Language)  -> data
+3. JSON(JavaScript Object Notation)  -> data
