@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PracticalAshuSir</string>
+    <string name="enter_your_name_below">Enter your name below...</string>
+    <string name="submit">Submit</string>
+</resources>
