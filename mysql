@@ -1,0 +1,70 @@
+
+Setting environment for using XAMPP for Windows.
+deepa@DEEPANKARSHARMA c:\xampp
+# mysql
+ERROR 1045 (28000): Access denied for user 'deepa'@'localhost' (using password: NO)
+
+deepa@DEEPANKARSHARMA c:\xampp
+# NO
+'NO' is not recognized as an internal or external command,
+operable program or batch file.
+
+deepa@DEEPANKARSHARMA c:\xampp
+# mysql.exe -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 203
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| my_database        |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> use my_database;
+Database changed
+MariaDB [my_database]> create table students(rollno int PRIMARY KEY, name varchar(20));
+Query OK, 0 rows affected (0.016 sec)
+
+MariaDB [my_database]> desc students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| rollno | int(11)     | NO   | PRI | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.018 sec)
+
+MariaDB [my_database]> Insert into students VALUES(14, 'Deepankar');
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [my_database]> Insert into students VALUES(24, 'Sooraj');
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [my_database]> Insert into students VALUES(23, 'Subham');
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [my_database]> Insert into students VALUES(23, 'Subham');
+ERROR 1062 (23000): Duplicate entry '23' for key 'PRIMARY'
+MariaDB [my_database]> select * from students;
++--------+-----------+
+| rollno | name      |
++--------+-----------+
+|     14 | Deepankar |
+|     23 | Subham    |
+|     24 | Sooraj    |
++--------+-----------+
+3 rows in set (0.001 sec)
+
+MariaDB [my_database]>
