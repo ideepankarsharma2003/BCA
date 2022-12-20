@@ -1,0 +1,46 @@
+
+Setting environment for using XAMPP for Windows.
+deepa@DEEPANKARSHARMA c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database LoginSystem;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> use LoginSystem;
+Database changed
+MariaDB [LoginSystem]> CREATE TABLE users (    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,    username VARCHAR(50) NOT NULL UNIQUE,    password VARCHAR(255) NOT NULL,    created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+Query OK, 0 rows affected (0.040 sec)
+
+MariaDB [LoginSystem]> desc users;
++------------+--------------+------+-----+---------------------+----------------+
+| Field      | Type         | Null | Key | Default             | Extra          |
++------------+--------------+------+-----+---------------------+----------------+
+| id         | int(11)      | NO   | PRI | NULL                | auto_increment |
+| username   | varchar(50)  | NO   | UNI | NULL                |                |
+| password   | varchar(255) | NO   |     | NULL                |                |
+| created_at | datetime     | YES  |     | current_timestamp() |                |
++------------+--------------+------+-----+---------------------+----------------+
+4 rows in set (0.023 sec)
+
+MariaDB [LoginSystem]> ALTER TABLE users DROP COLUMN created_at;
+Query OK, 0 rows affected (0.024 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [LoginSystem]> desc users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(50)  | NO   | UNI | NULL    |                |
+| password | varchar(255) | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+3 rows in set (0.016 sec)
+
+MariaDB [LoginSystem]>
