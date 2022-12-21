@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aliens [
+    <!ELEMENT aliens (alien+)>
+    <!-- alien+ means we want more element of alien in aliens, By default (1 parent-1 child) -->
+    <!ELEMENT alien (name, salary)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT salary (#PCDATA)>
+    <!-- attribute list, ID-> like primary key in DBMS -->
+    <!ATTLIST alien aid ID #REQUIRED>
+    <!ATTLIST alien lang (Java|Python|C|Cpp) "C">
+]>
+<aliens>
+    <alien aid="A1" lang="Python">
+        <name>Dhinchak Pooja</name>
+        <salary>50000</salary>
+    </alien>
+    <alien aid="A2" lang="C">
+        <name>Conda Reddy</name>
+        <salary>120000</salary>
+    </alien>
+    <alien aid="A3" lang="Cpp">
+        <name>Conda
+            Reddy</name>
+        <salary>12000</salary>
+    </alien>
+    <alien aid="A4">
+        <name>Ameer Baap Ki Aulad</name>
+        <salary>12000</salary>
+    </alien>
+</aliens>

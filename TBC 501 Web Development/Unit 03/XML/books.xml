@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books SYSTEM "bookstype.dtd">
+<books>
+    <book>
+        <book-name>Radhe Shyam</book-name>
+        <author-name>H.M. Shrivanshi</author-name>
+        <publisher>Bloomsberg</publisher>
+        <copies>500</copies>
+    </book>
+    <book>
+        <book-name>KK bro</book-name>
+        <author-name>author1</author-name>
+        <publisher>publisher1</publisher>
+        <copies>5001</copies>
+    </book>
+    <book>
+        <book-name>Amazing book</book-name>
+        <author-name>H.M. Amazing Publisher</author-name>
+        <publisher>Amazing Publisher</publisher>
+        <copies>500</copies>
+    </book>
+    <book>
+        <book-name>Amazing Book 2</book-name>
+        <author-name>H.M. Shrivanshi</author-name>
+        <publisher>Bloomsberg</publisher>
+        <copies>500</copies>
+    </book>
+</books>
