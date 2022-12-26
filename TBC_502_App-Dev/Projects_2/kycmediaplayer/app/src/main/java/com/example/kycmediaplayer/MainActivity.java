@@ -10,20 +10,20 @@ import android.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
     Button b;
     VideoView v;
-    MediaController mc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         b= findViewById(R.id.button);
         v= findViewById(R.id.vv);
-        mc= new MediaController(this);
     }
     public void playVideo(View view){
         String path= "android.resource://"+ getPackageName()+"/"+R.raw.video;
-        v.setMediaController(mc);
-        mc.setAnchorView(v);
         v.setVideoPath(path);
         v.start();
     }
 }
+
+
+
+

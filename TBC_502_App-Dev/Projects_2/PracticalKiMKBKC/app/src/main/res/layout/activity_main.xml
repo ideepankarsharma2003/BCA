@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/practical_01"
+        android:onClick="practical_01">
+    </Button>
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/practical_02"
+        android:layout_below="@id/b1"
+        android:onClick="practical_02">
+    </Button>
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/practical_03"
+        android:layout_below="@id/b2"
+        android:onClick="practical_03">
+    </Button>
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 04"
+        android:layout_below="@id/b3"
+        android:onClick="practical_04">
+    </Button>
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 05"
+        android:layout_below="@id/b4"
+        android:onClick="practical_05">
+    </Button>
+
+    <Button
+        android:id="@+id/b6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 06"
+        android:layout_below="@id/b5"
+        android:onClick="practical_06">
+    </Button>
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 07"
+        android:layout_below="@id/b6"
+        android:onClick="practical_07">
+    </Button>
+
+    <Button
+        android:id="@+id/b8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 08"
+        android:layout_below="@id/b7"
+        android:onClick="practical_08">
+    </Button>
+
+    <Button
+        android:id="@+id/b9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 09"
+        android:layout_below="@id/b8"
+        android:onClick="practical_09">
+    </Button>
+
+    <Button
+        android:id="@+id/b10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 10"
+        android:layout_below="@id/b9"
+        android:onClick="practical_10">
+    </Button>
+
+    <Button
+        android:id="@+id/b11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 11"
+        android:layout_below="@id/b10"
+        android:onClick="practical_11">
+    </Button>
+
+    <Button
+        android:id="@+id/b12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practical 12"
+        android:layout_below="@id/b11"
+        android:onClick="practical_12">
+    </Button>
+
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical01.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical02.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical03.xml" value="0.1" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical04.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical05.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical06.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical07.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical08.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical09.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical10.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical11.xml" value="0.2" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/layout/activity_practical12.xml" value="0.22826086956521738" />
+        <entry key="..\:/Deepankar/05_Semester/TBC_502_App-Dev/Projects_2/PracticalKiMKBKC/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1485" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
