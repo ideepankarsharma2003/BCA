@@ -1,0 +1,81 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>s01</servlet-name>
+    <servlet-class>GS</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s02</servlet-name>
+    <servlet-class>RD</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s03</servlet-name>
+    <servlet-class>RDinclude</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s04</servlet-name>
+    <servlet-class>RDforward</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s05</servlet-name>
+    <servlet-class>SR</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s06</servlet-name>
+    <servlet-class>SC</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>s07</servlet-name>
+    <servlet-class>HS</servlet-class>
+  </servlet>
+
+
+
+
+  
+
+  <servlet-mapping>
+    <servlet-name>s01</servlet-name>
+    <url-pattern>/generic</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s02</servlet-name>
+    <url-pattern>/requestdispatcher</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s03</servlet-name>
+    <url-pattern>/RDinclude</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s04</servlet-name>
+    <url-pattern>/RDforward</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s05</servlet-name>
+    <url-pattern>/sendredirect</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s06</servlet-name>
+    <url-pattern>/setcookie</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>s07</servlet-name>
+    <url-pattern>/httpservlet</url-pattern>
+  </servlet-mapping>
+</web-app>

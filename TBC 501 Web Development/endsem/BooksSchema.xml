@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<Books>
+    <title>Amazing book</title>
+    <author>Amazing author</author>
+    <isbn>Amazing ISBN</isbn>
+    <publication>Amazing Publication</publication>
+    <price>Amazing Price</price>
+</Books>

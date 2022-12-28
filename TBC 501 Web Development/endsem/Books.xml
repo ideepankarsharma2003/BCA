@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+    <!ELEMENT book (title, author, isbn, publication, price)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT isbn (#PCDATA)>
+    <!ELEMENT publication (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+]>
+
+
+<book>
+    <title>Amazing book</title>
+    <author>Amazing author</author>
+    <isbn>Amazing ISBN</isbn>
+    <publication>Amazing Publication</publication>
+    <price>Amazing Price</price>
+</book>
