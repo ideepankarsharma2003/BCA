@@ -5,9 +5,9 @@
 <body>
 <?php
  $sname= "localhost";
- $unmae= "root";
+ $uname= "root";
  $password = "";
- $conn = new mysqli($sname, $unmae, $password,"LoginSystem");
+ $conn = new mysqli($sname, $uname, $password,"LoginSystem");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

@@ -9,7 +9,26 @@
 <body>
     <!-- This is my php website -->
     <?php
-    for ($i = 0; $i < 10; $i++)echo "Hello World\n";
+        $n = 12321;
+        $o = $n;
+        $z = 0;
+        $rem = 0;
+        // echo $z==$rem;
+        echo "<h2>The original number is '$n'<br>";
+        // echo "The  is '$n'<br>";
+        while($n>0){
+            $rem = $n % 10;
+            $z = $z*10+ $rem;
+            // $n = $n / 10;
+            $n = intdiv($n, 10);
+            // echo "$n<br>";
+        }
+        echo "The reverse is: '$z'<br>";
+    // echo $z == $o;
+    if ($z == $o)
+        echo "The number is a palindrome";
+        else
+            echo "The number is not a palindrome";
     ?>
 </body>
 </html>

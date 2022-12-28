@@ -44,3 +44,44 @@ MariaDB [LoginSystem]> desc users;
 3 rows in set (0.016 sec)
 
 MariaDB [LoginSystem]>
+
+
+MariaDB [LoginSystem]> ALTER TABLE users ADD COLUMN (email varchar(200));
+Query OK, 0 rows affected (0.019 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [LoginSystem]> desc users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(50)  | NO   | UNI | NULL    |                |
+| password | varchar(255) | NO   |     | NULL    |                |
+| email    | varchar(200)  | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.017 sec)
+
+MariaDB [LoginSystem]>
+
+MariaDB [LoginSystem]> ALTER TABLE users ADD COLUMN (rc1 varchar(400));
+Query OK, 0 rows affected (0.018 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [LoginSystem]> ALTER TABLE users ADD COLUMN (rc2 varchar(400));
+Query OK, 0 rows affected (0.018 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [LoginSystem]> desc users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(50)  | NO   | UNI | NULL    |                |
+| password | varchar(255) | NO   |     | NULL    |                |
+| email    | varchar(200) | YES  |     | NULL    |                |
+| rc1      | varchar(400) | YES  |     | NULL    |                |
+| rc2      | varchar(400) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.016 sec)
+
+MariaDB [LoginSystem]>
