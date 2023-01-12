@@ -1,0 +1,14 @@
+1. What is M2M? Describe with example.
+2. What do mean by the communication protocol in IOT? Explain any one communication protocol used in the IOT. 	
+3. What is medium access control in IOT? Describe wireless medium access issues in IOT?	
+4. Write short note on the following:
+	(i)	SOAP
+	(ii)	REST
+	(iii) WebSocket  
+	(iv)	WSN
+
+1. What is cloud computing? Explain about the benefits of cloud computing in IOT.
+2. Describe the data generations, collection, storage in IOT cloud computing.
+3. Explain the IOT cloud computing based services.
+4. what do you mean by sensor technology? Explain about the various features required in Sensor used in IOT devices.
+5. What is Industrial IOT? Differentiate between the IIOT and IOT.
