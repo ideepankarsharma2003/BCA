@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:backgroundTint="#2E8ADA"
+
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="380dp"
+        android:layout_height="657dp"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|top"
+
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:paddingBottom="12dp">
+
+            <ImageButton
+
+                android:id="@+id/cab"
+                android:layout_width="266dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="14dp"
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="TODO"
+                android:cropToPadding="false"
+                app:srcCompat="@drawable/cab22"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/cabText"
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/button_states"
+                android:backgroundTint="@color/black"
+                android:bufferType="spannable"
+                android:ellipsize="marquee"
+                android:rotationX="12"
+                android:rotationY="4"
+                android:shadowColor="#FF0000"
+                android:text="Book Cab"
+
+                android:textColorHighlight="#EF1E1E"
+                android:textSize="12sp"
+                android:theme="@style/CardView.Light"
+                app:icon="@android:drawable/ic_menu_myplaces"
+                app:iconGravity="textStart"
+                app:iconPadding="28dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="224dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/shopping221"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/shoppingText"
+                android:layout_width="182dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/button_states"
+                android:backgroundTint="#D51111"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:hapticFeedbackEnabled="true"
+                android:padding="3dp"
+                android:text="Shop Now!"
+                android:textColor="#0277BD"
+                android:textSize="15dp"
+                app:icon="@android:drawable/btn_star_big_on"
+                app:iconGravity="textStart"
+                app:iconPadding="28dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/hotel"
+                android:layout_width="265dp"
+                android:layout_height="219dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:background="@color/white"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/hotel5"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/hotelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/button_states"
+                android:backgroundTint="#A13434"
+                android:ellipsize="marquee"
+                android:text="Search Hotel"
+                android:textSize="15dp"
+                app:icon="@android:drawable/ic_menu_my_calendar"
+                app:iconGravity="textStart"
+                app:iconPadding="28dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/food"
+                android:layout_width="243dp"
+                android:layout_height="227dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="14dp"
+                android:backgroundTint="@color/white"
+                app:srcCompat="@drawable/food2"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/foodText"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/button_states"
+                android:backgroundTint="#A13434"
+                android:ellipsize="marquee"
+                android:text="Order Yummmy!!!"
+                android:textSize="15dp"
+                app:icon="@android:drawable/button_onoff_indicator_on"
+                app:iconGravity="textStart"
+                app:iconPadding="28dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-import os
+# import os
 import cv2
 import numpy as np
 from keras.preprocessing import image
@@ -6,9 +6,9 @@ import warnings
 warnings.filterwarnings("ignore")
 # from keras.preprocessing.image import load_img, img_to_array 
 from keras.utils import load_img, img_to_array 
-from keras.preprocessing import image 
-from keras.models import  load_model
-import matplotlib.pyplot as plt
+# from keras.preprocessing import image 
+# from keras.models import  load_model
+# import matplotlib.pyplot as plt
 import numpy as np
 from fer import FER
 
@@ -30,7 +30,13 @@ while True:
         continue
     rgb_img = cv2.cvtColor(test_img, cv2.COLOR_BGR2RGB)
 
-    faces_detected = face_haar_cascade.detectMultiScale(rgb_img, 1.32, 5)
+    # faces_detected = face_haar_cascade.detectMultiScale(rgb_img, 1.32, 5)
+    faces_detected = face_haar_cascade.detectMultiScale(rgb_img,
+                                                        scaleFactor=1.3,
+                                                        minNeighbors=4,
+                                                        # minSize=(30, 30),
+                                                        flags=cv2.CASCADE_SCALE_IMAGE)
+    # faces_detected = face_haar_cascade.detectMultiScale(test_img, 1.32, 5)
 
     for (x, y, w, h) in faces_detected:
         cv2.rectangle(test_img, (x, y), (x + w, y + h), (255, 0, 0), thickness=7)
@@ -42,6 +48,7 @@ while True:
 
         # predictions = model.predict(img_pixels)
         predictions= emotion_detector.detect_emotions(rgb_img)
+        print(predictions)
 
         # find max indexed array
         # max_index = np.argmax(predictions[0])

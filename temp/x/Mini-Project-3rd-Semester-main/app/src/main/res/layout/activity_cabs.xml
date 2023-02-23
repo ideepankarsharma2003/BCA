@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cabs">
+
+    <ScrollView
+        android:id="@+id/scrollView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/olaImgButton"
+                android:layout_width="387dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ola"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/olaButton"
+                android:layout_marginBottom="22dp"
+
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@drawable/button_states"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Button" />
+
+            <ImageButton
+                android:id="@+id/meruImgButton"
+                android:layout_width="383dp"
+                android:layout_height="143dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="22dp"
+                app:srcCompat="@drawable/meru"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/meruButton"
+                android:layout_marginBottom="22dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_states"
+                android:text="Button" />
+
+            <ImageButton
+                android:id="@+id/uberImgButton"
+                android:layout_width="224dp"
+                android:layout_height="135dp"
+                android:background="@drawable/button_states"
+                android:layout_gravity="center"
+                android:layout_marginBottom="22dp"
+                app:srcCompat="@drawable/uber"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:layout_marginBottom="22dp"
+                android:id="@+id/uberButton"
+                android:layout_width="259dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_states"
+                android:text="Button" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
