@@ -17,10 +17,13 @@ kernel = None
 #     detectShadows=True, varThreshold= 800, history=700)
 foog = cv2.createBackgroundSubtractorMOG2(
     detectShadows=True, varThreshold= 100, history=1700)
+# foog = cv2.createBackgroundSubtractorMOG2(
+    # detectShadows=True, varThreshold= 100, history=170)
 
 # Noise filter threshold
 # thresh = 1100
-thresh = 800
+# thresh = 800
+thresh = 100
 
 while(1):
     ret, frame = cap.read()

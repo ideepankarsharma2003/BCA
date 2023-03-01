@@ -27,7 +27,9 @@ def send_message(info_dict, body):
         message = client.messages.create(
             from_='whatsapp:+14155238886',
             body=body,
-            to='whatsapp:+919639102301'
+            # to='whatsapp:+919639102301'
+            to='whatsapp:+918532941430'
+            
         )
         print("message sent on whatsapp !!!")
     except:
@@ -41,7 +43,7 @@ with open('credentials.txt', 'r') as myfile:
 info_dict = eval(data)
 
 
-st.title(" Smart AI automated Baby Healthcare System :baby: ")
+st.title(" :blue[Smart AI automated Baby Healthcare System :baby:] ")
 
 
 
@@ -186,13 +188,19 @@ with col3:
     stop1 = st.button("Stop Surveillance feed")
 with col4:
     FRAME_WINDOW1 = st.image([])
+    FPS = st.header('')
+    Time= st.header('')
+    Room_Occupied= st.header('')
+
 
 if start1:
-    cam1 = cv2.VideoCapture(0)
+    # cam1 = cv2.VideoCapture(0)
+    cam1 = cv2.VideoCapture('http://192.168.137.114:8080/video')
+    # cam1 = cv2.VideoCapture('http://192.168.137.110:8080/video')
     while True:
         ret, frame = cam1.read()
-        # dim = (720, 256)
-        # frame = cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
+        dim = (1024, 720)
+        frame = cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
         if not ret:
             break
 
@@ -225,7 +233,7 @@ if start1:
                     # out.release()
                     initial_time = None
 
-                    body = f'Alert: The room is too silent, Sayad apka baccha bhaag gya at {exit_time}, you should check the livestream !!!'
+                    body = f'Alert: The room is too silent, Maybe your kid went out at time {exit_time}, you should check the livestream !!!'
 
                     print(body)
                     send_message(info_dict, body)
@@ -234,20 +242,27 @@ if start1:
         elif status and sum(de) > (detection_thresh/2):
             initial_time = None
 
+        fps= cam1.get(cv2.CAP_PROP_FPS)
+
         # Get the current time in the required format
         current_time = datetime.datetime.now().strftime("%A, %I:%M:%S %p %d %B %Y")
 
         # Display the FPS
         cv2.putText(annotated_image, 'FPS: {:.2f}'.format(
             fps), (510, 450), cv2.FONT_HERSHEY_COMPLEX, 0.6, (255, 40, 155), 2)
+        
+        FPS.text('FPS: {:.2f}'.format(
+            fps))
 
         # Display Time
         cv2.putText(annotated_image, current_time, (310, 20),
                     cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255), 1)
+        Time.text(current_time)
 
         # Display the Room Status
         cv2.putText(annotated_image, 'Room Occupied: {}'.format(str(status)), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6,
                     (200, 10, 150), 2)
+        Room_Occupied.text('Room Occupied: {}'.format(str(status)))
 
         # Show the patience Value
         if initial_time is None:
@@ -267,7 +282,13 @@ if start1:
         if stop1:
             break
 
+b1= st.button("Push stream")
+# b2= st.button("Stop pushing the stream")
 
-
+def run(runfile):
+  with open(runfile, "r") as rnf:
+    exec(rnf.read())
+if b1:
+    run('push _with_vipin_creds.py')
 # with st.sidebar:
 #     v= st.video()
