@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h3>Forms</h3>
+    <form action="backend.php">
+        <div>
+            Name: <input type="text" name="myName">
+        </div><br>
+        <div>
+            Role: <input type="text" name="myRole">
+        </div><br>
+        
+        <div>
+            Email: <input type="email" name="myEmail" id="">
+        </div><br>
+        
+        <div>
+            Date: <input type="date" name="myDate" id="">
+        </div><br>
+        
+        <div>
+            Number: <input type="number" name="" id="">
+        </div><br>
+        
+        <div>
+            Write about yourself: <br>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+        </div><br>
+        
+        <div>
+            Gender: Male<input type="radio" name="" id=""> Female<input type="radio" name="" id=""> Other<input type="radio" name="" id="">
+        </div><br>
+        
+        <div>
+            <label for="show_id">Favourite TV Show: </label>
+            <select name="" id="show_id">
+                <option value="1">The Flash</option>
+                <option value="2">Arrow</option>
+                <option value="3">Peaky Blinders</option>
+                <option value="4" selected>The Witcher</option>
+            </select>
+        </div><br>
+        
+        <div>
+            Education: 10<input type="checkbox" name="" id="" checked> 12<input type="checkbox" name="" id=""> Graduation<input type="checkbox" name="" id="">
+        </div><br>
+        
+        <div>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div><br>
+    </form>
+</body>
+</html>
