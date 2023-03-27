@@ -17,8 +17,8 @@ firebase_admin.initialize_app(cred, {
 # })
 
 # Open the webcam and retrieve the frame
-# cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture('https://10.143.38.102:8080/video')
+cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture('https://10.143.38.102:8080/video')
 
 # cap = cv2.VideoCapture('http://192.168.137.114:8080/video')
 

@@ -18,8 +18,8 @@ client = Client(account_sid, auth_token)
 message = client.messages.create(
     from_='whatsapp:+14155238886',
     body='Bade achhe lagte hai\n ye dharti\nye nadiya\nye raina\naur tum...',
-    # to='whatsapp:+919639102301'
-    to='whatsapp:+918532941430'
+    to='whatsapp:+919639102301'
+    # to='whatsapp:+919639102'
 )
 
 print(message.sid)

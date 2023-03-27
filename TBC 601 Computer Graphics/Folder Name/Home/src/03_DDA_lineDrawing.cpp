@@ -1,64 +1,70 @@
-// // C++ program for DDA line generation
 
-// #include <bits/stdc++.h>
-// using namespace std;
+#include <graphics.h>
+#include <math.h>
+#include <stdio.h>
+int abs(int n) { return ((n > 0) ? n : (n * (-1))); }
 
-// // function for rounding off the pixels
-// int round(float n)
-// {
-//     if (n - (int)n < 0.5)
-//         return (int)n;
-//     return (int)(n + 1);
-// }
+// DDA Function for line generation
+void DDA(int X0, int Y0, int X1, int Y1)
+{
+    // calculate dx & dy
+    int dx = X1 - X0;
+    int dy = Y1 - Y0;
 
-// // Function for line generation
-// void DDALine(int x0, int y0, int x1, int y1)
-// {
+    // calculate steps required for generating pixels
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
 
-//     // Calculate dx and dy
-//     int dx = x1 - x0;
-//     int dy = y1 - y0;
+    // calculate increment in x & y for each steps
+    float Xinc = dx / (float)steps;
+    float Yinc = dy / (float)steps;
 
-//     int step;
+    // Put pixel for each step
+    float X = X0;
+    float Y = Y0;
 
-//     // If dx > dy we will take step as dx
-//     // else we will take step as dy to draw the complete
-//     // line
-//     if (abs(dx) > abs(dy))
-//         step = abs(dx);
-//     else
-//         step = abs(dy);
+    int color=1;
+    for (int i = 0; i <= steps; i++)
+    {
+        // putpixel(round(X), round(Y),YELLOW); // put pixel at (X,Y)
+        putpixel(round(X), round(Y),color); // put pixel at (X,Y)
+        X += Xinc;     // increment in x at each step
+        Y += Yinc;     // increment in y at each step
+        delay(100);    // for visualization of line-
+                    // generation step by step
+        color= (color+1)%20;
+    }
+}
 
-//     // Calculate x-increment and y-increment for each step
-//     float x_incr = (float)dx / step;
-//     float y_incr = (float)dy / step;
+int main()
+{
+    int gDrive = DETECT;
 
-//     // Take the initial points as x and y
-//     float x = x0;
-//     float y = y0;
+    int gMode;
 
-//     for (int i = 0; i < step; i++)
-//     {
+    initgraph(&gDrive, &gMode, NULL);
 
-//         // putpixel(round(x), round(y), WHITE);
-//         cout << round(x) << " " << round(y) << "\n";
-//         x += x_incr;
-//         y += y_incr;
-//         // delay(10);
-//     }
-// }
+    int X0 = 0, Y0 = 0, X1 = 0, Y1 = 0;
 
-// // Driver code
-// int main()
-// {
+    printf("The constraint on the X-axis are(0-%d)\n", getmaxx());
+    printf("The constraint on the Y-axis are(0-%d)\n", getmaxy());
 
-//     int x0 = 200, y0 = 180, x1 = 180, y1 = 160;
+    printf("Enter the X0:\t");
+    scanf("%d", &X0);    
+    printf("Enter the Y0:\t");
+    scanf("%d", &Y0);    
+    printf("Enter the X1:\t");
+    scanf("%d", &X1);    
+    printf("Enter the Y1:\t");
+    scanf("%d", &Y1); 
 
-//     // Function call
-//     DDALine(x0, y0, x1, y1);
 
-//     return 0;
-// }
+    // Function call
+    DDA(X0, Y0, X1, Y1);
+    // DDA(2, 2, 14, 16);
+    getch();
+    closegraph();
+    return 0;
+}
 
-// // all functions regarding to graphichs.h are commented out
-// // contributed by hopelessalexander
+
+

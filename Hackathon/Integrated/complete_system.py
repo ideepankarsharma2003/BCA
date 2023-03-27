@@ -195,7 +195,7 @@ with col4:
 
 if start1:
     # cam1 = cv2.VideoCapture(0)
-    cam1 = cv2.VideoCapture('http://192.168.137.114:8080/video')
+    cam1 = cv2.VideoCapture('http://192.168.205.234:8080/video')
     # cam1 = cv2.VideoCapture('http://192.168.137.110:8080/video')
     while True:
         ret, frame = cam1.read()
