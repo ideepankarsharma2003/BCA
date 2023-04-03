@@ -1,0 +1,29 @@
+/* External Styles */
+.external-styles {
+background-color: lightblue;
+padding: 20px;
+}
+
+.external-styles h2 {
+color: white;
+font-size: 24px;
+}
+
+.external-styles p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.external-styles .btn {
+background-color: green;
+color: white;
+border: none;
+
+padding: 10px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.external-styles .btn:hover {
+background-color: darkgreen;
+}

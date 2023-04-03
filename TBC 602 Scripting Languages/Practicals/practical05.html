@@ -1,0 +1,39 @@
+<!-- Design the webpage by applying the different style using inline, internal and external style sheet. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styles Example</title>
+    <!-- Internal Styles -->
+    <style>
+        h1 {
+            color: blue;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    </style>
+    <!-- External Styles -->
+    <link rel="stylesheet" type="text/css" href="practical05.css">
+</head>
+
+<body>
+    <!-- Inline Styles -->
+    <div style="background-color: yellow; padding: 20px;">
+        <h1 style="color: red;">Styles Example</h1>
+        <p style="text-align: justify;">This is an example of applying styles using inline, internal and external style
+            sheets. The heading is styled with inline styles, the paragraph is styled with internal styles, and the
+            background color and padding of this div are styled with inline styles.</p>
+    </div>
+    <!-- External Styles -->
+    <div class="external-styles">
+        <h2>External Styles</h2>
+        <p>This div is styled using an external style sheet.</p>
+        <button class="btn">Click me</button>
+    </div>
+</body>
+</html>

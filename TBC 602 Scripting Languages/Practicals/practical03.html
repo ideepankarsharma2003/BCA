@@ -1,0 +1,27 @@
+<!-- Implementation of popup of alert and confirm. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Popup Box Example</title>
+</head>
+
+<body>
+    <h1>Popup Box Example</h1>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+    <script>
+        function showAlert() {
+            alert("This is an alert message!");
+        }
+        function showConfirm() {
+            var result = confirm("Are you sure you want to delete this item?");
+            if (result == true) {
+                alert("You clicked OK!");
+            } else {
+                alert("You clicked Cancel!");
+            }
+        }
+    </script>
+</body>
+</html>

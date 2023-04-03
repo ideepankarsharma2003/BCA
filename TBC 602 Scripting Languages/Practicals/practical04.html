@@ -1,0 +1,45 @@
+<!-- Implementation the CSS Box Model. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Box Model Example</title>
+    <style>
+        /* Define styles for the outer box */
+        .outer-box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            border: 10px solid black;
+            padding: 20px;
+            margin: 50px;
+        }
+
+        /* Define styles for the inner box */
+        .inner-box {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border: 10px solid red;
+            padding: 20px;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            This is an example of the CSS box model.
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- The CSS box model is a container that contains multiple properties including borders, margin, padding, and the content itself. It is used to create the design and layout of web pages. It can be used as a toolkit for customizing the layout of different elements.  -->
