@@ -5,10 +5,10 @@ using namespace std;
 // Midpoint Circle drawing Algorithm
 void drawMidPointCircle(int x0, int y0, int radius)
 {
-    int x = radius, y = 0;
+    int y = radius, x = 0;
     int decisionParam = 1 - radius;
 
-    while (y <= x)
+    while (x <= y)
     {
         putpixel(x0 + x, y0 + y, 1);
         putpixel(x0 - x, y0 + y, 2);
@@ -19,14 +19,16 @@ void drawMidPointCircle(int x0, int y0, int radius)
         putpixel(x0 + y, y0 - x, 7);
         putpixel(x0 - y, y0 - x, 8);
 
-        y++;
+        delay(400);
+
+        x++;
 
         if (decisionParam <= 0)
-            decisionParam += 2 * y + 1;
+            decisionParam += 2 *x  + 1;
         else
         {
-            x--;
-            decisionParam += 2 * (y - x) + 1;
+            y--;
+            decisionParam += 2 * (x-y) + 1;
         }
     }
 }

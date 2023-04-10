@@ -1,8 +1,0 @@
-emo_dict = {
-    'happy': '1',
-    'sad': '2',
-    'angry': '3',
-    'neutral': '4',
-    'surprise': '5',
-    'fear': '6',
-}
