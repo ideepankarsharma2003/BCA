@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height, Width, Backgrounds & Borders</title>
+    <style>
+        #firstParagraph{
+            background-color: yellow;
+            height: 100px;
+            width: 500px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: blueviolet;
+            border-radius: 13px; /* curvy corners */
+        }
+        
+        #secondParagraph{
+            /* in one line */
+            border-top: 4px solid rgb(225, 6, 6);
+            border-left: 4px solid rgb(201, 230, 13);
+            border-right: 4px solid blueviolet;
+            border-bottom: 4px solid rgb(13, 237, 35);
+            background-color: orange;
+            height: 100px; width: 500px;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 200px;
+        }
+
+        #thirdParagraph{
+            background-image: url('tut19.jpg');
+            background-repeat: no-repeat; /* repeat-x and repeat-y will make it repeat on x and y axis */
+            /* background-position: center center; */
+            background-position: right center;
+            height: 480px; width: 480px;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>This is a heading</h3>
+    <p id="firstParagraph">This is the first paragraph.</p>
+    <p id="secondParagraph">This is the second paragraph.</p>
+    <p id="thirdParagraph">This is the third paragraph.</p>
+</body>
+</html>
