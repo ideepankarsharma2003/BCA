@@ -1,0 +1,50 @@
+<!-- // Javascript program to check weather the given year is a leap year in the Gregorian calender -->
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Leap Year Checker</title>
+        <script>
+            // Function to check if a year is a leap year
+            function isLeapYear(year) {
+                if (year % 4 === 0) {
+                    if (year % 100 === 0) {
+                        if (year % 400 === 0) {
+                            return true; // Divisible by 400, leap year
+                        } else {
+                            return false; // Divisible by 100 but not by 400, not a leap year
+                        }
+                    } else {
+                        return true; // Divisible by 4 but not by 100, leap year
+                    }
+                } else {
+                    return false; // Not divisible by 4, not a leap year
+                }
+            }
+            // Function to handle the form submission
+            function checkLeapYear() {
+                event.preventDefault();
+                const yearInput = document.getElementById("year");
+                const year = parseInt(yearInput.value);
+                const result = document.getElementById("result");
+
+                if (isLeapYear(year)) {
+                    result.innerText = year + " is a leap year.";
+                } else {
+                    result.innerText = year + " is not a leap year.";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Leap Year Checker</h1>
+        <form onsubmit="checkLeapYear()">
+            <label for="year">Enter a year:</label>
+            <input type="number" id="year" required>
+            <button type="submit">Check</button>
+        </form>
+        <p id="result"></p>
+    </body>
+
+    </html>
