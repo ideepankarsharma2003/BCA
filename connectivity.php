@@ -16,7 +16,7 @@
     } else {
         echo "Connection established successfully.";
     }
-
+    
     $query = "Select * from students;";
     $res= mysqli_query($conn, $query);
 
